@@ -37,7 +37,7 @@ body {
   transform: translate(-50%, -50%);
   z-index: 2;
 }
-
+/**/
 .content-box {
   /*grid-area: 1 / 5 / 5 / 8;*/
   width: 1000px;
