@@ -1,0 +1,19 @@
+@import url(../Grundstruktur/colors.css);
+
+h1 {
+  color: white;
+}
+
+.verteidigung {
+  --background-color: linear-gradient(to bottom right, #0e1b24, #72203b);
+  color: white;
+}
+
+/* Muss in jeder Seite eingefügt werden, da der button durch die home.css sonst immer 
+  gehighlighted ist */
+
+.uebersicht {
+  --background-color: var(--tertiary-color);
+  --border-color: linear-gradient(to bottom right, #0e1b24, #72203b);
+  color: #0e1b24;
+}

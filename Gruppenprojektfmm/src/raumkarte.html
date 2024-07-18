@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="/Fonts/Oxanium/Oxanium-VariableFont_wght.ttf"
+    />
+    <title>Raumkarte</title>
+    <link rel="stylesheet" href="../css/home.css" />
+    <link rel="stylesheet" href="../css/raumkarte.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <!-- Header-Grundstruktur -->
+    <header>
+      <div class="head-bar">
+        <a href="../src/index.html">HOME</a>
+        <a href="#">NOTIZEN</a>
+        <a href="#">HIGHSCORE</a>
+        <a href="#">EINSTELLUNGEN</a>
+        <a href="#">SUPPORT</a>
+        <a href="#">LOGOUT</a>
+      </div>
+      <div class="player"><a href="#">PLAYER</a></div>
+      <div class="clock" id="clock"><p>CLOCK</p></div>
+    </header>
+    <!-- Main-Grundstrkutur -->
+    <main>
+      <section class="section1">
+        <div class="ressources">
+          <div class="raw-material">
+            <div class="raw raw1">
+              <img src="../img/img/icons/SILICA.png" alt="" />
+              <p class="ressource-counter">0000</p>
+            </div>
+            <div class="raw raw2">
+              <img src="../img/img/icons/ORE.png" alt="" />
+              <p class="ressource-counter">0000</p>
+            </div>
+            <div class="raw raw3">
+              <img src="../img/img/icons/CHEM.png" alt="" />
+              <p class="ressource-counter">0000</p>
+            </div>
+          </div>
+          <div class="products">
+            <div class="prod prod3">
+              <img src="../img/img/icons/FUEL.png" alt="" />
+              <p class="ressource-counter">0000</p>
+            </div>
+            <div class="prod prod1">
+              <img src="../img/img/icons/AMMO.png" alt="" />
+              <p class="ressource-counter">0000</p>
+            </div>
+            <div class="prod prod4">
+              <img src="../img/img/icons/STEEL.png" alt="" />
+              <p class="ressource-counter">0000</p>
+            </div>
+            <div class="prod prod2">
+              <img src="../img/img/icons/ELECTRONICS.png" alt="" />
+              <p class="ressource-counter">0000</p>
+            </div>
+            <div class="prod prod5">
+              <img src="../img/img/icons/ENERGY.png" alt="" />
+              <p class="ressource-counter">0000</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section2">
+        <div class="planete-bar">
+          <div class="planetes">
+            <div class="planet planet1">
+              <img src="../img/img/planets/p-1.png" alt="" />
+            </div>
+            <div class="planet planet2">
+              <img src="../img/img/planets/p-2.png" alt="" />
+            </div>
+            <div class="planet planet3">
+              <img src="../img/img/planets/p-3.png" alt="" />
+            </div>
+            <div class="planet planet4">
+              <img src="../img/img/planets/p-4.png" alt="" />
+            </div>
+            <div class="planet planet5">
+              <img src="../img/img/planets/p-5.png" alt="" />
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section3">
+        <div class="main-content">
+          <div class="logo">
+            <img src="../img/img/icons/logo_placeholder.png" alt="" />
+          </div>
+          <div class="menu-box">
+            <a href="../src/index.html"
+              ><button class="btn uebersicht">Übersicht</button></a
+            >
+            <a href="../src/raumkarte.html"
+              ><button class="btn raumkarte">Raumkarte</button></a
+            >
+            <a href="../src/gebaeude.html"
+            ><button class="btn ziviler">Gebaeude</button></a
+            >
+            <a href="../src/forschung.html"
+              ><button class="btn forschung">Forschung</button></a
+            >
+            <a href="../src/werften.html"
+              ><button class="btn werften">Werften</button></a
+            >
+            <a href="../src/verteidigung.html"
+            ><button class="btn verteidigung">Verteidigung</button></a
+            >
+            <a href="../src/armada.html"
+              ><button class="btn armada">Armada</button></a
+            >
+          </div>
+          <div class="content-box">
+            <div class="sonnensystem">
+              <i
+                class="fa-solid fa-spaghetti-monster-flying"
+                style="color: #ffffff"
+              ></i>
+              <p>Sonnensystem</p>
+              <div class="koordinaten-menu">
+                <button class="arrow-button">
+                  <span class="arrow-left"></span>
+                </button>
+                <div class="koordinate">01</div>
+                <button class="arrow-button">
+                  <span class="arrow-right"></span>
+                </button>
+                <button class="arrow-button">
+                  <span class="arrow-left"></span>
+                </button>
+                <div class="koordinate">01</div>
+                <button class="arrow-button">
+                  <span class="arrow-right"></span>
+                </button>
+                <button class="arrow-button">
+                  <span class="arrow-left"></span>
+                </button>
+                <div class="koordinate">01</div>
+                <button class="arrow-button">
+                  <span class="arrow-right"></span>
+                </button>
+              </div>
+            </div>
+            <div class="galaxy-row1">
+              <div class="planet-box">
+                <div class="planetnumber">
+                  <p>0-0</p>
+                  <div class="alert-icons">
+                    <i class="fa-solid fa-circle" style="color: #62d117"></i>
+                    <i
+                      class="fa-solid fa-triangle-exclamation"
+                      style="color: #adadad"
+                    ></i>
+                    <i
+                      class="fa-solid fa-skull-crossbones"
+                      style="color: #adadad"
+                    ></i>
+                  </div>
+                </div>
+                <div>
+                  <img src="../img/img/planets/p-1.png" class="active-planet" />
+                </div>
+                <div class="planet-data">
+                  <p>Planetname</p>
+                  <p>Player</p>
+                </div>
+              </div>
+              <div class="planet-box">
+                <div class="planetnumber">
+                  <p>1-0</p>
+                  <div class="alert-icons">
+                    <i class="fa-solid fa-circle" style="color: #62d117"></i>
+                    <i
+                      class="fa-solid fa-triangle-exclamation"
+                      style="color: #adadad"
+                    ></i>
+                    <i
+                      class="fa-solid fa-skull-crossbones"
+                      style="color: #adadad"
+                    ></i>
+                  </div>
+                </div>
+                <div><img src="../img/img/planets/p-2.png" /></div>
+                <div class="planet-data">
+                  <p>Planetname</p>
+                  <p>Player</p>
+                </div>
+              </div>
+              <div class="planet-box">
+                <div class="planetnumber">
+                  <p>2-0</p>
+                  <div class="alert-icons">
+                    <i class="fa-solid fa-circle" style="color: #62d117"></i>
+                    <i
+                      class="fa-solid fa-triangle-exclamation"
+                      style="color: #ffdb39"
+                    ></i>
+                    <i
+                      class="fa-solid fa-skull-crossbones"
+                      style="color: #adadad"
+                    ></i>
+                  </div>
+                </div>
+                <div><img src="../img/img/planets/p-3.png" /></div>
+                <div class="planet-data">
+                  <p>Planetname</p>
+                  <p>Player</p>
+                </div>
+              </div>
+              <div class="planet-box">
+                <div class="planetnumber">
+                  <p>3-0</p>
+                  <div class="alert-icons">
+                    <i class="fa-solid fa-circle" style="color: #adadad"></i>
+                    <i
+                      class="fa-solid fa-triangle-exclamation"
+                      style="color: #adadad"
+                    ></i>
+                    <i
+                      class="fa-solid fa-skull-crossbones"
+                      style="color: #adadad"
+                    ></i>
+                  </div>
+                </div>
+                <div><img src="../img/img/planets/p-4.png" /></div>
+                <div class="planet-data">
+                  <p>Planetname</p>
+                  <p>Player</p>
+                </div>
+              </div>
+              <div class="planet-box">
+                <div class="planetnumber">
+                  <p>4-0</p>
+                  <div class="alert-icons">
+                    <i class="fa-solid fa-circle" style="color: #62d117"></i>
+                    <i
+                      class="fa-solid fa-triangle-exclamation"
+                      style="color: #adadad"
+                    ></i>
+                    <i
+                      class="fa-solid fa-skull-crossbones"
+                      style="color: #fd0d0d"
+                    ></i>
+                  </div>
+                </div>
+                <div><img src="../img/img/planets/p-5.png" /></div>
+                <div class="planet-data">
+                  <p>Planetname</p>
+                  <p>Player</p>
+                </div>
+              </div>
+            </div>
+            <div class="galaxy-row2">
+              <div class="planet-box">
+                <div class="planetnumber">
+                  <p>0-1</p>
+                  <div class="alert-icons">
+                    <i class="fa-solid fa-circle" style="color: #adadad"></i>
+                    <i
+                      class="fa-solid fa-triangle-exclamation"
+                      style="color: #adadad"
+                    ></i>
+                    <i
+                      class="fa-solid fa-skull-crossbones"
+                      style="color: #adadad"
+                    ></i>
+                  </div>
+                </div>
+                <div><img src="../img/img/planets/p-6.png" /></div>
+                <div class="planet-data">
+                  <p>Planetname</p>
+                  <p>Player</p>
+                </div>
+              </div>
+              <div class="planet-box">
+                <div class="planetnumber">
+                  <p>1-1</p>
+                  <div class="alert-icons">
+                    <i class="fa-solid fa-circle" style="color: #adadad"></i>
+                    <i
+                      class="fa-solid fa-triangle-exclamation"
+                      style="color: #adadad"
+                    ></i>
+                    <i
+                      class="fa-solid fa-skull-crossbones"
+                      style="color: #adadad"
+                    ></i>
+                  </div>
+                </div>
+                <div><img src="../img/img/planets/p-1.png" /></div>
+                <div class="planet-data">
+                  <p>Planetname</p>
+                  <p>Player</p>
+                </div>
+              </div>
+              <div class="planet-box">
+                <div class="planetnumber">
+                  <p>2-1</p>
+                  <div class="alert-icons">
+                    <i class="fa-solid fa-circle" style="color: #adadad"></i>
+                    <i
+                      class="fa-solid fa-triangle-exclamation"
+                      style="color: #adadad"
+                    ></i>
+                    <i
+                      class="fa-solid fa-skull-crossbones"
+                      style="color: #adadad"
+                    ></i>
+                  </div>
+                </div>
+                <div><img src="../img/img/planets/p-7.png" /></div>
+                <div class="planet-data">
+                  <p>Planetname</p>
+                  <p>Player</p>
+                </div>
+              </div>
+              <div class="planet-box">
+                <div class="planetnumber">
+                  <p>3-1</p>
+                  <div class="alert-icons">
+                    <i class="fa-solid fa-circle" style="color: #adadad"></i>
+                    <i
+                      class="fa-solid fa-triangle-exclamation"
+                      style="color: #adadad"
+                    ></i>
+                    <i
+                      class="fa-solid fa-skull-crossbones"
+                      style="color: #adadad"
+                    ></i>
+                  </div>
+                </div>
+                <div><img src="../img/img/planets/p-5.png" /></div>
+                <div class="planet-data">
+                  <p>Planetname</p>
+                  <p>Player</p>
+                </div>
+              </div>
+              <div class="planet-box">
+                <div class="planetnumber">
+                  <p>4-1</p>
+                  <div class="alert-icons">
+                    <i class="fa-solid fa-circle" style="color: #adadad"></i>
+                    <i
+                      class="fa-solid fa-triangle-exclamation"
+                      style="color: #adadad"
+                    ></i>
+                    <i
+                      class="fa-solid fa-skull-crossbones"
+                      style="color: #adadad"
+                    ></i>
+                  </div>
+                </div>
+                <div><img src="../img/img/planets/p-2.png" /></div>
+                <div class="planet-data">
+                  <p>Planetname</p>
+                  <p>Player</p>
+                </div>
+              </div>
+            </div>
+            <div class="galaxy-row3">
+              <div class="planet-box">
+                <div class="planetnumber">
+                  <p>0-2</p>
+                  <div class="alert-icons">
+                    <i class="fa-solid fa-circle" style="color: #adadad"></i>
+                    <i
+                      class="fa-solid fa-triangle-exclamation"
+                      style="color: #adadad"
+                    ></i>
+                    <i
+                      class="fa-solid fa-skull-crossbones"
+                      style="color: #adadad"
+                    ></i>
+                  </div>
+                </div>
+                <div><img src="../img/img/planets/p-4.png" /></div>
+                <div class="planet-data">
+                  <p>Planetname</p>
+                  <p>Player</p>
+                </div>
+              </div>
+              <div class="planet-box">
+                <div class="planetnumber">
+                  <p>1-2</p>
+                  <div class="alert-icons">
+                    <i class="fa-solid fa-circle" style="color: #adadad"></i>
+                    <i
+                      class="fa-solid fa-triangle-exclamation"
+                      style="color: #adadad"
+                    ></i>
+                    <i
+                      class="fa-solid fa-skull-crossbones"
+                      style="color: #adadad"
+                    ></i>
+                  </div>
+                </div>
+                <div><img src="../img/img/planets/p-7.png" /></div>
+                <div class="planet-data">
+                  <p>Planetname</p>
+                  <p>Player</p>
+                </div>
+              </div>
+              <div class="planet-box">
+                <div class="planetnumber">
+                  <p>2-2</p>
+                  <div class="alert-icons">
+                    <i class="fa-solid fa-circle" style="color: #adadad"></i>
+                    <i
+                      class="fa-solid fa-triangle-exclamation"
+                      style="color: #adadad"
+                    ></i>
+                    <i
+                      class="fa-solid fa-skull-crossbones"
+                      style="color: #adadad"
+                    ></i>
+                  </div>
+                </div>
+                <div><img src="../img/img/planets/p-3.png" /></div>
+                <div class="planet-data">
+                  <p>Planetname</p>
+                  <p>Player</p>
+                </div>
+              </div>
+              <div class="planet-box">
+                <div class="planetnumber">
+                  <p>3-2</p>
+                  <div class="alert-icons">
+                    <i class="fa-solid fa-circle" style="color: #adadad"></i>
+                    <i
+                      class="fa-solid fa-triangle-exclamation"
+                      style="color: #adadad"
+                    ></i>
+                    <i
+                      class="fa-solid fa-skull-crossbones"
+                      style="color: #adadad"
+                    ></i>
+                  </div>
+                </div>
+                <div><img src="../img/img/planets/p-6.png" /></div>
+                <div class="planet-data">
+                  <p>Planetname</p>
+                  <p>Player</p>
+                </div>
+              </div>
+              <div class="planet-box">
+                <div class="planetnumber">
+                  <p>4-2</p>
+                  <div class="alert-icons">
+                    <i class="fa-solid fa-circle" style="color: #adadad"></i>
+                    <i
+                      class="fa-solid fa-triangle-exclamation"
+                      style="color: #adadad"
+                    ></i>
+                    <i
+                      class="fa-solid fa-skull-crossbones"
+                      style="color: #adadad"
+                    ></i>
+                  </div>
+                </div>
+                <div><img src="../img/img/planets/p-4.png" /></div>
+                <div class="planet-data">
+                  <p>Planetname</p>
+                  <p>Player</p>
+                </div>
+              </div>
+            </div>
+            <div class="galaxy-row4">
+              <div class="planet-box">
+                <div class="planetnumber">
+                  <p>0-3</p>
+                  <div class="alert-icons">
+                    <i class="fa-solid fa-circle" style="color: #adadad"></i>
+                    <i
+                      class="fa-solid fa-triangle-exclamation"
+                      style="color: #adadad"
+                    ></i>
+                    <i
+                      class="fa-solid fa-skull-crossbones"
+                      style="color: #adadad"
+                    ></i>
+                  </div>
+                </div>
+                <div><img src="../img/img/planets/p-2.png" /></div>
+                <div class="planet-data">
+                  <p>Planetname</p>
+                  <p>Player</p>
+                </div>
+              </div>
+              <div class="planet-box">
+                <div class="planetnumber">
+                  <p>1-3</p>
+                  <div class="alert-icons">
+                    <i class="fa-solid fa-circle" style="color: #adadad"></i>
+                    <i
+                      class="fa-solid fa-triangle-exclamation"
+                      style="color: #adadad"
+                    ></i>
+                    <i
+                      class="fa-solid fa-skull-crossbones"
+                      style="color: #adadad"
+                    ></i>
+                  </div>
+                </div>
+                <div><img src="../img/img/planets/p-1.png" /></div>
+                <div class="planet-data">
+                  <p>Planetname</p>
+                  <p>Player</p>
+                </div>
+              </div>
+              <div class="planet-box">
+                <div class="planetnumber">
+                  <p>2-3</p>
+                  <div class="alert-icons">
+                    <i class="fa-solid fa-circle" style="color: #adadad"></i>
+                    <i
+                      class="fa-solid fa-triangle-exclamation"
+                      style="color: #adadad"
+                    ></i>
+                    <i
+                      class="fa-solid fa-skull-crossbones"
+                      style="color: #adadad"
+                    ></i>
+                  </div>
+                </div>
+                <div><img src="../img/img/planets/p-3.png" /></div>
+                <div class="planet-data">
+                  <p>Planetname</p>
+                  <p>Player</p>
+                </div>
+              </div>
+              <div class="planet-box">
+                <div class="planetnumber">
+                  <p>3-3</p>
+                  <div class="alert-icons">
+                    <i class="fa-solid fa-circle" style="color: #adadad"></i>
+                    <i
+                      class="fa-solid fa-triangle-exclamation"
+                      style="color: #adadad"
+                    ></i>
+                    <i
+                      class="fa-solid fa-skull-crossbones"
+                      style="color: #adadad"
+                    ></i>
+                  </div>
+                </div>
+                <div><img src="../img/img/planets/p-7.png" /></div>
+                <div class="planet-data">
+                  <p>Planetname</p>
+                  <p>Player</p>
+                </div>
+              </div>
+              <div class="planet-box">
+                <div class="planetnumber">
+                  <p>4-3</p>
+                  <div class="alert-icons">
+                    <i class="fa-solid fa-circle" style="color: #adadad"></i>
+                    <i
+                      class="fa-solid fa-triangle-exclamation"
+                      style="color: #adadad"
+                    ></i>
+                    <i
+                      class="fa-solid fa-skull-crossbones"
+                      style="color: #adadad"
+                    ></i>
+                  </div>
+                </div>
+                <div><img src="../img/img/planets/p-5.png" /></div>
+                <div class="planet-data">
+                  <p>Planetname</p>
+                  <p>Player</p>
+                </div>
+              </div>
+            </div>
+            <div class="planet-content"></div>
+          </div>
+          <div class="chat-box">
+            <div class="chat-window"></div>
+            <div class="chat-input">
+              <button type="submit" class="submit-button"></button>
+            </div>
+          </div>
+          <div class="legend">
+            <div class="legend-title"><p>Legende</p></div>
+            <div class="alert-icons">
+              <i class="fa-solid fa-circle" style="color: #62d117"></i>
+              <p>Eigene Flotte</p>
+              <i
+                class="fa-solid fa-triangle-exclamation"
+                style="color: #ffdb39"
+              ></i>
+              <p>Aktivitaet</p>
+              <i
+                class="fa-solid fa-skull-crossbones"
+                style="color: #fd0d0d"
+              ></i>
+              <p>Feindliche Aktivitaet</p>
+            </div>
+          </div>
+          <div class="messages">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <i class="fa-regular fa-envelope"></i>
+            <i class="fa-regular fa-comment"></i>
+            <i class="fa-solid fa-user-gear"></i>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer></footer>
+  </body>
+</html>

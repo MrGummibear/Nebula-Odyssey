@@ -1,0 +1,53 @@
+@import url(../Grundstruktur/colors.css);
+
+h1 {
+  color: white;
+}
+
+.ziviler {
+  --background-color: linear-gradient(to bottom right, #0e1b24, #72203b);
+  color: white;
+}
+
+/* Muss in jeder Seite eingefügt werden, da der button durch die home.css sonst immer 
+    gehighlighted ist */
+
+.uebersicht {
+  --background-color: var(--tertiary-color);
+  --border-color: linear-gradient(to bottom right, #0e1b24, #72203b);
+  color: #0e1b24;
+}
+
+.content-box {
+  height: fit-content;
+  min-height: 1000px;
+}
+
+.gebaeude-heading {
+  padding-left: 20px;
+  text-decoration: underline #72203b;
+}
+
+.gebaeude-box {
+  width: 95%;
+  height: 200px;
+  margin: 20px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 10px;
+  flex-direction: column;
+  border: #72203b 1px solid;
+  background-image: url(../img/img/gebaeude/test2223.png);
+  background-size: cover;
+}
+
+.gebaeude-box .text {
+  width: 300px;
+  margin: 20px;
+}
+
+.gebaeude-box h1 {
+  margin-bottom: 10px;
+}

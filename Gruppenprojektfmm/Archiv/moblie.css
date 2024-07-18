@@ -1,0 +1,88 @@
+@import url(../Grundstruktur/colors.css);
+
+body {
+    width: 100vw;
+    background-image: url("../Grundstruktur/img/background/background-a.jpg");
+    margin: 0 auto;
+}
+
+main {
+    display: flex;
+    flex-direction: row-reverse;
+    padding-top: 1%;
+}
+
+header {
+    width: 100vw;
+    display: flex;
+    justify-content: space-evenly;
+    background-color: var(--primary-color);
+    border-bottom: var(--secondary-color) 2px solid;
+    padding: 2%;
+}
+
+.player {
+    display: flex;
+    justify-content: center;
+    font-size: xx-small;
+}
+
+.messages {
+    display: flex;
+    border: solid rgb(0, 0, 0);
+    width: 100%;
+    height: 50px;
+    background-color: var(--primary-color);
+}
+
+.head-bar {
+    display: flex;
+    justify-content: center;
+    padding-left: 2%;
+    font-size: xx-small;
+}
+
+.head-bar>a {
+    padding-left: 2%;
+}
+
+.ressources {
+    display: flex;
+    flex-direction: column;
+    padding-right: 5%;
+    padding-left: 5%;
+}
+
+.ressources>div {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+}
+
+.ressources>div>div {
+
+    display: flex;
+    flex-direction: column;
+}
+
+.ressources>div>div>img {
+    width: 20px;
+    height: 20px;
+    padding: 0 auto;
+    margin: 0 auto;
+}
+
+.ressources>div>div>p {
+    padding-bottom: 5px;
+    margin: 0 auto;
+    font-size: xx-small;
+}
+
+.planets {
+    display: flex;
+}
+
+.planets>img {
+    width: 50px;
+    height: 50px;
+}

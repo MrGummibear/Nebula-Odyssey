@@ -1,0 +1,192 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+:root {
+  font-size: 62.5%;
+}
+
+a {
+  color: white;
+}
+
+body {
+  background-image: url("../img/img/background/background-a.jpg");
+  font-size: 1.6rem;
+}
+
+/* Header-Bereich */
+
+header {
+  min-width: 1000px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.head-bar {
+  display: flex;
+  justify-content: center;
+  gap: 5rem;
+  min-width: 600px;
+}
+
+.player {
+  display: flex;
+  justify-content: center;
+  min-width: 300px;
+}
+
+.clock {
+  min-width: 100px;
+  color: white;
+}
+
+/* Ressourcen-Bereich
+  1. Elternteil "ressources" erhaelt 100vw
+  2. Kinder "raw-material" und "products" 80vw
+  hier ist folgendes zu beachten:
+  Beim verkleinern des Bildschirms, gehen die Enkelkinder 
+  ineinander über und verformen sich -> evtl. "space-evenly" mit gap ersetzen,
+  oder feste  Pixelwerte festlegen*/
+
+/* Elternteil */
+.ressources {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  border: 2px dotted white;
+}
+
+/* Kinder */
+
+.raw-material {
+  background: rgba(255, 255, 0, 0.315);
+  width: 300px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.products {
+  background: rgba(0, 128, 0, 0.301);
+  width: 700px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+/* Enkelkinder */
+
+.raw,
+.prod {
+  width: 4rem;
+  height: 4rem;
+  margin: 0.5rem;
+  background: grey;
+  border: 2px solid black;
+  box-sizing: border-box;
+}
+
+/* Elternteil  */
+
+.planete-bar {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  z-index: -1;
+  border: 2px dotted white;
+}
+
+/* Kinder */
+
+.planetes {
+  width: 80vw;
+  background: rgba(0, 0, 255, 0.315);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Enkelkinder */
+
+.planet {
+  width: 100px;
+  height: 100px;
+  border: 2px white dotted;
+  border-radius: 50%;
+}
+
+/* Elternteil */
+
+/* Grid-Versuch */
+
+.main-content {
+  display: grid;
+  grid-template-columns: 1px repeat(2, 1fr) 1px repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  /* grid-column-gap: 10px; */
+  /* grid-row-gap: 5px; */
+  /* margin-top: 50px; */
+  border: 2px dotted white;
+}
+
+/* Kinder */
+
+/* Grid-Versuch */
+
+.menu-box {
+  grid-area: 2 / 3 / 5 / 4;
+  min-width: 250px;
+  height: 400px;
+  background: rgba(255, 153, 0, 0.425);
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.content-box {
+  grid-area: 1 / 5 / 5 / 8;
+
+  min-width: 1000px;
+  height: 750px;
+  background: rgba(230, 35, 35, 0.527);
+  border: 1px solid black;
+  margin: 50px 25px 0 25px;
+  align-self: center;
+}
+
+.chat-box {
+  grid-area: 2 / 8 / 5 / 9;
+  min-width: 250px;
+  height: 500px;
+  background: rgba(255, 0, 128, 0.445);
+  border: 1px solid black;
+}
+
+/*  */
+/* Buttons */
+/*  */
+.btn {
+  width: 100px;
+  height: 35px;
+  background: grey;
+}
+/*  */
+/* Footer */
+
+footer {
+  width: 100vw;
+  height: 100px;
+  background: rgba(128, 128, 128, 0.295);
+  margin-top: 50px;
+}

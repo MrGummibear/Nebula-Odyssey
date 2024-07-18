@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="/Fonts/Oxanium/Oxanium-VariableFont_wght.ttf"
+    />
+    <title>Forschung</title>
+    <link rel="stylesheet" href="../css/home.css" />
+    <link rel="stylesheet" href="../css/forschung.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script defer src="../javascript/forschung.js"></script>
+  </head>
+
+  <body>
+    <!-- Header-Grundstruktur -->
+    <header>
+      <div class="head-bar">
+        <a href="../src/index.html">HOME</a>
+        <a href="#">NOTIZEN</a>
+        <a href="#">HIGHSCORE</a>
+        <a href="#">EINSTELLUNGEN</a>
+        <a href="#">SUPPORT</a>
+        <a href="#">LOGOUT</a>
+      </div>
+      <div class="player"><a href="#">PLAYER</a></div>
+      <div class="clock" id="clock">
+        <p>CLOCK</p>
+      </div>
+    </header>
+    <!-- Main-Grundstruktur -->
+    <main>
+      <section class="section1">
+        <div class="ressources">
+          <div class="raw-material">
+            <div class="raw raw1">
+              <img src="../img/img/icons/SILICA.png" alt="" />
+              <p class="ressource-counter">0000</p>
+            </div>
+            <div class="raw raw2">
+              <img src="../img/img/icons/ORE.png" alt="" />
+              <p class="ressource-counter">0000</p>
+            </div>
+            <div class="raw raw3">
+              <img src="../img/img/icons/CHEM.png" alt="" />
+              <p class="ressource-counter">0000</p>
+            </div>
+          </div>
+          <div class="products">
+            <div class="prod prod3">
+              <img src="../img/img/icons/FUEL.png" alt="" />
+              <p class="ressource-counter">0000</p>
+            </div>
+            <div class="prod prod1">
+              <img src="../img/img/icons/AMMO.png" alt="" />
+              <p class="ressource-counter">0000</p>
+            </div>
+            <div class="prod prod4">
+              <img src="../img/img/icons/STEEL.png" alt="" />
+              <p class="ressource-counter">0000</p>
+            </div>
+            <div class="prod prod2">
+              <img src="../img/img/icons/ELECTRONICS.png" alt="" />
+              <p class="ressource-counter">0000</p>
+            </div>
+            <div class="prod prod5">
+              <img src="../img/img/icons/ENERGY.png" alt="" />
+              <p class="ressource-counter">0000</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section2">
+        <div class="planete-bar">
+          <div class="planetes">
+            <div class="planet planet1">
+              <img src="../img/img/planets/p-1.png" alt="" />
+            </div>
+            <div class="planet planet2">
+              <img src="../img/img/planets/p-2.png" alt="" />
+            </div>
+            <div class="planet planet3">
+              <img src="../img/img/planets/p-3.png" alt="" />
+            </div>
+            <div class="planet planet4">
+              <img src="../img/img/planets/p-4.png" alt="" />
+            </div>
+            <div class="planet planet5">
+              <img src="../img/img/planets/p-5.png" alt="" />
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section3">
+        <div class="main-content">
+          <div class="logo">
+            <img src="../img/img/icons/logo_placeholder.png" alt="" />
+          </div>
+          <div class="menu-box">
+            <a href="../src/index.html"
+              ><button class="btn uebersicht">Übersicht</button></a
+            >
+            <a href="../src/raumkarte.html"
+              ><button class="btn raumkarte">Raumkarte</button></a
+            >
+            <a href="../src/gebaeude.html"
+              ><button class="btn ziviler">Gebaeude</button></a
+            >
+            <a href="../src/forschung.html"
+              ><button class="btn forschung">Forschung</button></a
+            >
+            <a href="../src/werften.html"
+              ><button class="btn werften">Werften</button></a
+            >
+            <a href="../src/verteidigung.html"
+              ><button class="btn verteidigung">Verteidigung</button></a
+            >
+            <a href="../src/armada.html"
+              ><button class="btn armada">Armada</button></a
+            >
+          </div>
+          <div class="content-box">
+            <div class="researchheader" id="r-header">
+              <div class="researchflex">
+                <div id="costtable" class="researchcosts">
+                  <!-- <h1 id="forschungs-title">Bergbau Stufe X</h1> -->
+                  <table width="400px">
+                    <thead>
+                      <tr>
+                        <td id="forschungs-title">Bergbau</td>
+                        <!-- Hier müssten wir nochmal eine extra Column erstellen wo nur die Stufe reinkommt und geaendert wird-->
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th>Ressource</th>
+                        <th>Kosten</th>
+                      </tr>
+                      <tr>
+                        <td>Stahl</td>
+                        <td>0000</td>
+                      </tr>
+                      <tr>
+                        <td>Elektronik</td>
+                        <td>0000</td>
+                      </tr>
+                      <tr>
+                        <td>Energie</td>
+                        <td>0000</td>
+                      </tr>
+                      <tr>
+                        <td>Treibstoff</td>
+                        <td>0000</td>
+                      </tr>
+                      <tr>
+                        <td>Munition</td>
+                        <td>0000</td>
+                      </tr>
+                      <tr>
+                        <td>Silicium</td>
+                        <td>0000</td>
+                      </tr>
+                      <tr>
+                        <td>Erz</td>
+                        <td>0000</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div id="r-footer" class="researchfooter">
+                  <div class="box-left">
+                    <p class="left" id="description"></p>
+                  </div>
+                  <div class="detail-box">
+                    <button class="right btn" type="button">Details</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <section class="researchoverview">
+              <div>
+                <div class="element">
+                  <input type="button" class="f-bergbau testevent" />
+                  <span class="tooltip">Bergbau</span>
+                </div>
+                <div class="element">
+                  <input type="button" class="f-funktechnik testevent" />
+                  <span class="tooltip">Funktechnik</span>
+                </div>
+                <div class="element">
+                  <input type="button" class="f-panzerung testevent" />
+                  <span class="tooltip">Panzerung</span>
+                </div>
+                <div class="element">
+                  <input type="button" class="f-ballistik testevent" />
+                  <span class="tooltip">Ballistik</span>
+                </div>
+              </div>
+              <div>
+                <div class="element">
+                  <input type="button" class="f-energiewaffen testevent" />
+                  <span class="tooltip">Energiewaffen</span>
+                </div>
+                <div class="element">
+                  <input type="button" class="f-schildtechnik testevent" />
+                  <span class="tooltip">Schildtechnik</span>
+                </div>
+                <div class="element">
+                  <input type="button" class="f-sprungantrieb testevent" />
+                  <span class="tooltip">Sprungantriebe</span>
+                </div>
+                <div class="element">
+                  <input type="button" class="f-verbrennung testevent" />
+                  <span class="tooltip">Verbrennungstriebwerke</span>
+                </div>
+              </div>
+            </section>
+          </div>
+          <div class="messages">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <i class="fa-regular fa-envelope"></i>
+            <i class="fa-regular fa-comment"></i>
+            <i class="fa-solid fa-user-gear"></i>
+          </div>
+          <div class="chat-box">
+            <div class="chat-window"></div>
+            <div class="chat-input">
+              <button type="submit" class="submit-button"></button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer></footer>
+  </body>
+</html>

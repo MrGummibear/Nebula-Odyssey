@@ -1,0 +1,14 @@
+:root {
+  /* Allgemeine Farben */
+  --primary-color: #0e1b24;
+  --secondary-color: #72203b;
+  --tertiary-color: #8d867b6b;
+  --highlight-color: #9cf741;
+  --accent-color: #08151d;
+
+  /* Farben für die Legende */
+  --inactive-color: #adadad;
+  --legend1-color: #62d117;
+  --legend2-color: #ffdb39;
+  --legend3-color: #fd0d0d;
+}

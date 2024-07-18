@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      href="../img/img/favicon/favicon.ico"
+      type="image/x-icon"
+    />
+    <link
+      rel="stylesheet"
+      href="./Fonts/Oxanium/Oxanium-VariableFont_wght.ttf"
+    />
+    <link
+      rel="stylesheet"
+      href="/Fonts/Inconsolata/Inconsolata-VariableFont_wdth,wght.ttf"
+    />
+    <title>Home</title>
+    <link rel="stylesheet" href="../css/home.css" />
+    <link rel="stylesheet" href="../css/werften.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script defer src="../javascript/werften.js"></script>
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet"> -->
+  </head>
+  <body>
+    <!-- Header-Grundstruktur -->
+    <header>
+      <div class="head-bar">
+        <a href="../src/index.html">HOME</a>
+        <a href="#">NOTIZEN</a>
+        <a href="#">HIGHSCORE</a>
+        <a href="#">EINSTELLUNGEN</a>
+        <a href="#">SUPPORT</a>
+        <a href="#">LOGOUT</a>
+      </div>
+      <div class="player"><a href="#">PLAYER</a></div>
+      <div class="clock" id="clock"><p>CLOCK</p></div>
+    </header>
+    <!-- Main-Grundstrkutur -->
+    <main>
+      <section class="section1">
+        <div class="ressources">
+          <div class="raw-material">
+            <div class="raw raw1">
+              <img src="../img/img/icons/SILICA.png" alt="" />
+              <p class="ressource-counter">0000</p>
+            </div>
+            <div class="raw raw2">
+              <img src="../img/img/icons/ORE.png" alt="" />
+              <p class="ressource-counter">0000</p>
+            </div>
+            <div class="raw raw3">
+              <img src="../img/img/icons/CHEM.png" alt="" />
+              <p class="ressource-counter">0000</p>
+            </div>
+          </div>
+          <div class="products">
+            <div class="prod prod3">
+              <img src="../img/img/icons/FUEL.png" alt="" />
+              <p class="ressource-counter">0000</p>
+            </div>
+            <div class="prod prod1">
+              <img src="../img/img/icons/AMMO.png" alt="" />
+              <p class="ressource-counter">0000</p>
+            </div>
+            <div class="prod prod4">
+              <img src="../img/img/icons/STEEL.png" alt="" />
+              <p class="ressource-counter">0000</p>
+            </div>
+            <div class="prod prod2">
+              <img src="../img/img/icons/ELECTRONICS.png" alt="" />
+              <p class="ressource-counter">0000</p>
+            </div>
+            <div class="prod prod5">
+              <img src="../img/img/icons/ENERGY.png" alt="" />
+              <p class="ressource-counter">0000</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section2">
+        <div class="planete-bar">
+          <div class="planetes">
+            <div class="planet planet1">
+              <img src="../img/img/planets/p-1.png" alt="" />
+            </div>
+            <div class="planet planet2">
+              <img src="../img/img/planets/p-2.png" alt="" />
+            </div>
+            <div class="planet planet3">
+              <img src="../img/img/planets/p-3.png" alt="" />
+            </div>
+            <div class="planet planet4">
+              <img src="../img/img/planets/p-4.png" alt="" />
+            </div>
+            <div class="planet planet5">
+              <img src="../img/img/planets/p-5.png" alt="" />
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section3">
+        <div class="main-content">
+          <div class="logo">
+            <img src="../img/img/icons/logo_placeholder.png" alt="" />
+          </div>
+          <div class="menu-box">
+            <a href="../src/index.html"
+              ><button class="btn uebersicht">Übersicht</button></a
+            >
+            <a href="../src/raumkarte.html"
+              ><button class="btn raumkarte">Raumkarte</button></a
+            >
+            <a href="../src/gebaeude.html"
+              ><button class="btn ziviler">Gebaeude</button></a
+            >
+            <a href="../src/forschung.html"
+              ><button class="btn forschung">Forschung</button></a
+            >
+            <a href="../src/werften.html"
+              ><button class="btn werften">Werften</button></a
+            >
+            <a href="../src/verteidigung.html"
+              ><button class="btn verteidigung">Verteidigung</button></a
+            >
+            <a href="../src/armada.html"
+              ><button class="btn armada">Armada</button></a
+            >
+          </div>
+          <div class="content-box">
+            <div id="werften-title" class="werften-title">
+              
+            </div>
+            <div class="werften-box">
+              <div class="werft">
+                <div class="werft-bar">
+                  <button class="btn" id="change-klein">Kleine Werft</button>
+                  <button class="btn" id="change-mittel">Mittlere Werft</button>
+                  <button class="btn" id="change-gross">Große Werft</button>
+                </div>
+                <div class="btn-box" id="btn-content"></div>
+              </div>
+            </div>
+          </div>
+          <div class="chat-box">
+            <div class="chat-window"></div>
+            <div class="chat-input">
+              <button type="submit" class="submit-button"></button>
+            </div>
+          </div>
+          <div class="messages">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <i class="fa-regular fa-envelope"></i>
+            <i class="fa-regular fa-comment"></i>
+            <i class="fa-solid fa-user-gear"></i>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer></footer>
+  </body>
+</html>

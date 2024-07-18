@@ -1,0 +1,150 @@
+@import url(../Grundstruktur/colors.css);
+
+h1,
+h4 {
+  color: white;
+}
+
+.werften {
+  --background-color: linear-gradient(to bottom right, #0e1b24, #72203b);
+  color: white;
+}
+
+/* Muss in jeder Seite eingefügt werden, da der button durch die home.css sonst immer 
+    gehighlighted ist */
+
+.uebersicht {
+  --background-color: var(--tertiary-color);
+  --border-color: linear-gradient(to bottom right, #0e1b24, #72203b);
+  color: #0e1b24;
+}
+
+.content-box {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  min-height: 1000px;
+  height: fit-content;
+}
+
+.werften-title {
+  width: 100%;
+  height: 50rem;
+  background-image: url(../img/img/werften/uebersicht-title.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* margin-top: 2rem; */
+  border: 2px solid var(--accent-color);
+}
+
+.werften-box {
+  width: 75%;
+  height: 70%;
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.werft {
+  width: 100%;
+  height: 33%;
+  background-color: var(--accent-color);
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+}
+
+.werft-bar {
+  width: 100%;
+  background-color: var(--accent-color);
+  border-bottom: 1px solid var(--secondary-color);
+  text-align: center;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(3, 40px);
+  grid-column-gap: 30px;
+  grid-row-gap: 0px;
+}
+
+#change-klein {
+  grid-area: 2 / 2 / 3 / 3;
+}
+#change-mittel {
+  grid-area: 2 / 3 / 3 / 4;
+}
+#change-gross {
+  grid-area: 2 / 4 / 3 / 5;
+}
+
+.btn-box {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-column-gap: 10px;
+  grid-row-gap: 5px;
+  width: 100%;
+  height: 30rem;
+  /* border-radius: 20px; */
+}
+
+.btn1 {
+  grid-area: 2 / 2 / 3 / 3;
+  width: 130px;
+}
+.btn2 {
+  grid-area: 2 / 3 / 3 / 4;
+  width: 130px;
+}
+.btn3 {
+  grid-area: 2 / 4 / 3 / 5;
+  width: 130px;
+}
+.btn4 {
+  grid-area: 2 / 5 / 3 / 6;
+  width: 130px;
+}
+.btn5 {
+  grid-area: 4 / 2 / 5 / 3;
+  width: 130px;
+}
+.btn6 {
+  grid-area: 4 / 3 / 5 / 4;
+  width: 130px;
+}
+.btn7 {
+  grid-area: 4 / 4 / 5 / 5;
+  width: 130px;
+}
+.btn8 {
+  grid-area: 4 / 5 / 5 / 6;
+  width: 130px;
+}
+
+.btn9 {
+  grid-area: 3 / 2 / 4 / 3;
+  width: 130px;
+}
+.btn10 {
+  grid-area: 3 / 3 / 4 / 4;
+  width: 130px;
+}
+.btn11 {
+  grid-area: 3 / 4 / 4 / 5;
+  width: 130px;
+}
+.btn12 {
+  grid-area: 3 / 5 / 4 / 6;
+  width: 130px;
+}
+
+@media screen and (max-width: 1440px) {
+  .btn-box > .btn {
+    width: 100px;
+  }
+}
