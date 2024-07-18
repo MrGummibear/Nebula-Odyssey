@@ -102,7 +102,13 @@
     );
   }
   
+  
   .uebersicht {
+    --background-color: linear-gradient(to bottom right, #0e1b24, #72203b);
+    color: white;
+  }
+
+  .active .btn{
     --background-color: linear-gradient(to bottom right, #0e1b24, #72203b);
     color: white;
   }

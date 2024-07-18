@@ -1,5 +1,5 @@
 import "./Menubox.css"
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Menubox = () => {
     return (
@@ -8,27 +8,27 @@ const Menubox = () => {
             <img src="/icons/logo_placeholder.png" alt="" />
           </div>
           <div className="menu-box">
-            <Link to='/overview'>
+            <NavLink to='/overview' activeClassName='active'>
                 <button className="btn uebersicht">Übersicht</button>
-            </Link>
-            <Link to='/spacemap'>
+            </NavLink>
+            <NavLink to='/spacemap' activeClassName='active'>
                 <button className="btn raumkarte">Raumkarte</button>
-            </Link>
-            <Link to='/buildings'>
+            </NavLink>
+            <NavLink to='/buildings' activeClassName='active'>
                 <button className="btn ziviler">Gebaeude</button>
-            </Link>
-            <Link to='/research'>
+            </NavLink>
+            <NavLink to='/research' activeClassName='active'>
                 <button className="btn forschung">Forschung</button>
-            </Link>
-            <Link to='/shipyard'>
+            </NavLink>
+            <NavLink to='/shipyard' activeClassName='active'>
                 <button className="btn werften">Werften</button>
-            </Link>
-            <Link to='/defense'>
+            </NavLink>
+            <NavLink to='/defense'activeClassName='active'>
                 <button className="btn verteidigung">Verteidigung</button>
-            </Link>
-            <Link to='/armada'>
+            </NavLink>
+            <NavLink to='/armada' activeClassName='active'>
                 <button className="btn armada">Armada</button>
-            </Link>
+            </NavLink>
           </div>
         </div>
     );
