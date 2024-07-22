@@ -2,9 +2,7 @@ import "./Shipyard.css";
 import { useState } from "react";
 
 const Shipyard = () => {
-  const [shipsSmall, setShipsSmall] = useState([]);
-  const [shipsMedium, setShipsMedium] = useState([]);
-  const [shipsBig, setShipsBig] = useState([]);
+  const [ships, setShips] = useState([]);
   const [shipImage, setShipImage] = useState(
     `url(/werften/uebersicht-title.png)`
   );
@@ -50,14 +48,14 @@ const Shipyard = () => {
       {
         id: "flaggeschuetz",
         class: "btn btn7",
-        label: "Flaggeschütz",
-        img: "/werften/kleine_werft/flaggeschütz/flaggeschütz1.png",
+        label: "Flaggeschuetz",
+        img: "/werften/kleine_werft/flaggeschuetz/flaggeschuetz1.png",
       },
       {
         id: "lasergeschuetz",
         class: "btn btn8",
-        label: "Lasergeschütz",
-        img: "/werften/kleine_werft/lasergeschütz/lasergeschütz1.jpg",
+        label: "Lasergeschuetz",
+        img: "/werften/kleine_werft/lasergeschuetz/lasergeschuetz1.jpg",
       },
     ],
     mittel: [
@@ -70,8 +68,8 @@ const Shipyard = () => {
       {
         id: "zerstoerer",
         class: "btn btn2",
-        label: "Zerstörer",
-        img: "/werften/mittlere_werft/zerstörer/zerstörer_1.png",
+        label: "Zerstoerer",
+        img: "/werften/mittlere_werft/zerstoerer/zerstoerer_1.png",
       },
       {
         id: "kreuzer",
@@ -120,7 +118,7 @@ const Shipyard = () => {
       {
         id: "traegerschiff",
         class: "btn btn10",
-        label: "Trägerschiff",
+        label: "Traegerschiff",
         img: "/werften/große_werft/traegerschiff/traegerschiff_1.png",
       },
       {
@@ -132,28 +130,14 @@ const Shipyard = () => {
       {
         id: "partikelgeschuetz",
         class: "btn btn12",
-        label: "Partikelgeschütz",
-        img: "/werften/große_werft/partikelgeschütz/partikelgeschütz1.jpg",
+        label: "Partikelgeschuetz",
+        img: "/werften/große_werft/partikelgeschuetz/partikelgeschuetz1.jpg",
       },
     ],
   };
 
-  const handleSmallShips = () => {
-    setShipsMedium([]);
-    setShipsBig([]);
-    setShipsSmall(werftTypen.klein);
-  };
-
-  const handleMediumShips = () => {
-    setShipsSmall([]);
-    setShipsBig([]);
-    setShipsMedium(werftTypen.mittel);
-  };
-
-  const handleBigShips = () => {
-    setShipsSmall([]);
-    setShipsMedium([]);
-    setShipsBig(werftTypen.gross);
+  const handleShipType = (type) => {
+    setShips(werftTypen[type]);
   };
 
   const changeImage = (img) => {
@@ -173,7 +157,7 @@ const Shipyard = () => {
             <button
               className="btn"
               id="change-klein"
-              onClick={handleSmallShips}
+              onClick={() => handleShipType("klein")}
             >
               {" "}
               Kleine Werft
@@ -181,16 +165,20 @@ const Shipyard = () => {
             <button
               className="btn"
               id="change-mittel"
-              onClick={handleMediumShips}
+              onClick={() => handleShipType("mittel")}
             >
               Mittlere Werft
             </button>
-            <button className="btn" id="change-gross" onClick={handleBigShips}>
+            <button
+              className="btn"
+              id="change-gross"
+              onClick={() => handleShipType("gross")}
+            >
               Große Werft
             </button>
           </div>
           <div className="btn-box" id="btn-content">
-            {shipsSmall.map((ship) => (
+            {ships.map((ship) => (
               <button
                 key={ship.id}
                 id={ship.id}
@@ -200,7 +188,7 @@ const Shipyard = () => {
                 {ship.label}
               </button>
             ))}
-            {shipsMedium.map((ship) => (
+            {ships.map((ship) => (
               <button
                 key={ship.id}
                 id={ship.id}
@@ -210,7 +198,7 @@ const Shipyard = () => {
                 {ship.label}
               </button>
             ))}
-            {shipsBig.map((ship) => (
+            {ships.map((ship) => (
               <button
                 key={ship.id}
                 id={ship.id}
@@ -228,8 +216,3 @@ const Shipyard = () => {
 };
 
 export default Shipyard;
-
-// bei button klick ändert sich der content im div btn-box
-// kleine werft > btn box enthält 8 buttons
-// mittlere werft > btn box enthält 8 buttons
-// gr. werft > btn box enthält 4 buttons
