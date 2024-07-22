@@ -3,6 +3,7 @@ import { useState } from "react";
 
 const Defense = () => {
   const [description, setDescription] = useState("");
+  const [image, setImage] = useState(`/werften/uebersicht-title.png`);
 
   const descriptionText = {
     lasergeschuetz: `Lasergeschuetz Lorem ipsum dolor sit amet.`,
@@ -16,17 +17,25 @@ const Defense = () => {
     setDescription(descriptionText[text]);
   };
 
+  const changeImage = () => {
+    setImage;
+  };
+
   return (
     <div className="content-box">
       <div className="defense-top">
         <div className="defense-info"></div>
-        <div className="defense-img"></div>
+        <div className="defense-img">
+          <img src={image} alt="Verteidigungsanlage"></img>
+        </div>
       </div>
       <div className="defense-bot">
         <div className="defense-btnbox">
           <button
             className="btn"
-            onClick={() => changeDescription("lasergeschuetz")}
+            onClick={
+              (() => changeDescription("lasergeschuetz"), () => changeImage())
+            }
           >
             Lasergeschuetz
           </button>
