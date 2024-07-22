@@ -28,7 +28,7 @@ h4 {
 
 .defense-info {
   width: 200px;
-  height: 250px;
+  height: 450px;
   border: 2px solid green;
   position: relative;
   left: 2%;
@@ -36,7 +36,7 @@ h4 {
 }
 
 .defense-img {
-  width: 60%;
+  width: 70%;
   height: 65%;
   border: 2px solid yellow;
   position: relative;
@@ -46,18 +46,107 @@ h4 {
 .defense-bot {
   border: 2px solid white;
   width: 95%;
-  min-height: 40vh;
+  height: 300px;
   display: flex;
 }
 
 .defense-btnbox {
   width: 200px;
-  height: 100px;
+  height: 200px;
   border: 2px solid blue;
+  position: relative;
+  left: 2%;
+  margin: auto 0 auto 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
 }
 
 .defense-description {
-  width: 200px;
-  height: 100px;
+  width: 70%;
+  height: 65%;
   border: 2px solid pink;
+  position: relative;
+  left: 5%;
+  margin: auto 0 auto 0;
+}
+
+.btn {
+  --background-color: var(--tertiary-color);
+  --border-color: linear-gradient(to bottom right, #0e1b24, #72203b);
+  --border-width: 0.2em;
+  --edge-size: 0.5em;
+  color: #0e1b24;
+  cursor: pointer;
+  background: var(--background-color);
+  padding: 0.5em 1.5em;
+  border: 0;
+  position: relative;
+  display: inline-grid;
+  place-content: center;
+  clip-path: polygon(
+    var(--edge-size) 0%,
+    100% 0,
+    100% calc(100% - var(--edge-size)),
+    calc(100% - var(--edge-size)) 100%,
+    0 100%,
+    0% var(--edge-size)
+  );
+  transition: color 250ms;
+  width: 150px;
+}
+
+.btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--border-color);
+  z-index: -2;
+}
+
+.btn::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--background-color);
+  z-index: -1;
+  clip-path: polygon(
+    var(--border-width) calc(var(--edge-size) + var(--border-width) * 0.5),
+    calc(var(--edge-size) + var(--border-width) * 0.5) var(--border-width),
+    calc(100% - var(--border-width)) var(--border-width),
+    calc(100% - var(--border-width))
+      calc(100% - calc(var(--edge-size) + var(--border-width) * 0.5)),
+    calc(100% - calc(var(--edge-size) + var(--border-width) * 0.5))
+      calc(100% - var(--border-width)),
+    calc(var(--border-width)) calc(100% - var(--border-width))
+  );
+  transition: clip-path 500ms;
+}
+
+.btn:hover {
+  color: white;
+}
+
+.btn:hover::after {
+  clip-path: polygon(
+    calc(100% - var(--border-width))
+      calc(100% - calc(var(--edge-size) + var(--border-width) * 0.5)),
+    calc(100% - var(--border-width)) var(--border-width),
+    calc(100% - var(--border-width)) var(--border-width),
+    calc(100% - var(--border-width))
+      calc(100% - calc(var(--edge-size) + var(--border-width) * 0.5)),
+    calc(100% - calc(var(--edge-size) + var(--border-width) * 0.5))
+      calc(100% - var(--border-width)),
+    calc(100% - calc(var(--edge-size) + var(--border-width) * 0.5))
+      calc(100% - var(--border-width))
+  );
+}
+
+.defense-description {
+  color: white;
+  font-size: larger;
+  padding: 10px;
+  display: flex;
 }

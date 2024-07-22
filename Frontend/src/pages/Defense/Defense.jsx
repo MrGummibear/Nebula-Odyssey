@@ -2,17 +2,18 @@ import "./Defense.css";
 import { useState } from "react";
 
 const Defense = () => {
-  const [ships, setShips] = useState([]);
-  const [shipImage, setShipImage] = useState(
-    `url(/werften/uebersicht-title.png)`
-  );
+  const [description, setDescription] = useState("");
 
-  const handleShipType = (type) => {
-    setShips(werftTypen[type]);
+  const descriptionText = {
+    lasergeschuetz: `Lasergeschuetz Lorem ipsum dolor sit amet.`,
+    flaggeschuetz: `Flaggeschuetz Lorem ipsum dolor sit amet.`,
+    ionenkanone: `Ionenkanone Lorem ipsum dolor sit amet.`,
+    railgun: `Railgun Lorem ipsum dolor sit amet.`,
+    partikelgeschuetz: `Partikelgeschuetz Lorem ipsum dolor sit amet.`,
   };
 
-  const changeImage = (img) => {
-    setShipImage(`url(${img})`);
+  const changeDescription = (text) => {
+    setDescription(descriptionText[text]);
   };
 
   return (
@@ -22,8 +23,38 @@ const Defense = () => {
         <div className="defense-img"></div>
       </div>
       <div className="defense-bot">
-        <div className="defense-btnbox"></div>
-        <div className="defense-description"></div>
+        <div className="defense-btnbox">
+          <button
+            className="btn"
+            onClick={() => changeDescription("lasergeschuetz")}
+          >
+            Lasergeschuetz
+          </button>
+          <button
+            className="btn"
+            onClick={() => changeDescription("flaggeschuetz")}
+          >
+            Flaggeschuetz
+          </button>
+          <button
+            className="btn"
+            onClick={() => changeDescription("ionenkanone")}
+          >
+            Ionenkanone
+          </button>
+          <button className="btn" onClick={() => changeDescription("railgun")}>
+            Railgun
+          </button>
+          <button
+            className="btn"
+            onClick={() => changeDescription("partikelgeschuetz")}
+          >
+            Partikelgeschuetz
+          </button>
+        </div>
+        <div className="defense-description">
+          <h4>{description}</h4>
+        </div>
       </div>
     </div>
   );
