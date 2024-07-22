@@ -1,4 +1,22 @@
 import "./Navbar.css"
+import { useState } from "react";
+
+const Clock = () => {
+    let time = new Date().toLocaleTimeString();
+    const [currentTime, setCurrentTime] = useState(time);
+
+    const updateTime = () => {
+        let time = new Date().toLocaleTimeString();
+        setCurrentTime(time);
+    }
+    setInterval(updateTime, 1000);
+
+    return (
+        <div>
+            <h1>{time}</h1>
+        </div>
+    )
+}
 
 const Navbar = () => {
     return (
@@ -13,7 +31,7 @@ const Navbar = () => {
             </div>
             <div className="player"><a href="#">PLAYER</a></div>
             <div className="clock" id="clock">
-                <p>CLOCK</p>
+                <p><Clock/></p>
             </div>
         </header>
     );
