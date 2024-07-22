@@ -39,12 +39,15 @@ body {
 }
 
 .content-box {
-  /*grid-area: 1 / 5 / 5 / 8;*/
+  display: flex;
+  flex-direction: column;
   width: 1000px;
-  height: 1000px;
+  min-height: 1000px;
+  height: fit-content;
   background: var(--primary-color);
   border: 5px solid var(--accent-color);
-  align-self: center;  
+  align-self: center;
+  color: white;
 }
 
 @media screen and (max-width: 1440px) {
