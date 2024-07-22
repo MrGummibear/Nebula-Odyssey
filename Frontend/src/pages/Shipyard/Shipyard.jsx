@@ -13,7 +13,7 @@ const Shipyard = () => {
         id: "kleinerTransporter",
         class: "btn btn1",
         label: "Kleiner Transporter",
-        img: "/werften/kleine_werft/kleiner_transporter/kleiner_transporter1.png",
+        img: "/werften/kleine_werft/kleiner_transporter/kleiner_transporter2.png",
       },
       {
         id: "leichterJaeger",
@@ -37,7 +37,7 @@ const Shipyard = () => {
         id: "fregatte",
         class: "btn btn5",
         label: "Fregatte",
-        img: "/werften/kleine_werft/fregatte/fregatte_1.png",
+        img: "/werften/kleine_werft/fregatte/fregatte_3.png",
       },
       {
         id: "miningDrone",
