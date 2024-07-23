@@ -126,11 +126,11 @@ const Shipyard = () => {
               min="0"
               max={maxCount}
             />
-            <button className="btn" onClick={incrementCount}>
-              +
-            </button>
             <button className="btn" onClick={decrementCount}>
               -
+            </button>
+            <button className="btn" onClick={incrementCount}>
+              +
             </button>
           </div>
           <button className="btn buy-btn">Kaufen</button>
