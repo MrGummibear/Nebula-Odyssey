@@ -11,13 +11,13 @@ const Armada = () => {
                 <h1>Armada</h1>
             </div>
             <section>
-                <h3>Armada im Einsatz</h3>
+                <h3 className='text-title'>Armada im Einsatz</h3>
                 {activities.map((activity, index) => (
                     <Activity key={index} activity={activity} />
                 ))}
             </section>
             <section>
-                <h3>Armada im Hangar</h3>
+                <h3 className='text-title'>Armada im Hangar</h3>
                 <ul>
                     <li className='unit-box-title'>
                         <p className='text-left'>Einheit</p>
