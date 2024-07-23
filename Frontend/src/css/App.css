@@ -1,6 +1,8 @@
+@import './fonts.css';
 * {
   margin: 0px;
   padding: 0px;
+  font-family: Inconsolata-regular, sans-serif;
 }
 
 :root{

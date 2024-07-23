@@ -22,7 +22,7 @@ const Navbar = () => {
     return (
         <header>
             <div className="head-bar">
-                <a href="../src/index.html">HOME</a>
+                <a href="#">HOME</a>
                 <a href="#">NOTIZEN</a>
                 <a href="#">HIGHSCORE</a>
                 <a href="#">EINSTELLUNGEN</a>
