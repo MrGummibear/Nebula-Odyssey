@@ -33,15 +33,6 @@ ul {
   color: #0e1b24;
 }
 
-.content-box {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  min-height: 1000px;
-  height: fit-content;
-}
-
 .defense-top {
   border: 2px solid var(--primary-color);
   width: 95%;
