@@ -1,30 +1,66 @@
-import "./Defense.css";
 import { useState } from "react";
+import "./Defense.css";
+import werftTypen from "../../assets/data/werften";
+
+const defaultDescription = (
+  <div>
+    <p>Willkommen bei deinen Verteidigungsanlagen!</p>
+    <p>
+      Schütze deinen Stützpunkt in dieser gefährlichen Galaxie mit unseren
+      hochmodernen Verteidigungssystemen. Jede Anlage ist darauf ausgelegt,
+      Angriffe effektiv abzuwehren und deine Kolonien zu sichern.
+    </p>
+    <p>
+      Wähle eine Anlage, um mehr zu erfahren und bereite dich auf den nächsten
+      Angriff vor!
+    </p>
+    <p>Bleib wachsam und sicher!</p>
+  </div>
+);
 
 const Defense = () => {
-  const [description, setDescription] = useState("");
+  const [description, setDescription] = useState(defaultDescription);
   const [image, setImage] = useState(`/werften/uebersicht-title.png`);
 
-  const descriptionText = {
-    lasergeschuetz: `Lasergeschuetz Lorem ipsum dolor sit amet.`,
-    flaggeschuetz: `Flaggeschuetz Lorem ipsum dolor sit amet.`,
-    ionenkanone: `Ionenkanone Lorem ipsum dolor sit amet.`,
-    railgun: `Railgun Lorem ipsum dolor sit amet.`,
-    partikelgeschuetz: `Partikelgeschuetz Lorem ipsum dolor sit amet.`,
-  };
+  const changeDescriptionAndImage = (descriptionKey) => {
+    let item = null;
+    ["klein", "mittel", "gross"].forEach((size) => {
+      if (!item) {
+        item = werftTypen[size].find(
+          (element) => element.id === descriptionKey
+        );
+      }
+    });
 
-  const changeDescription = (text) => {
-    setDescription(descriptionText[text]);
-  };
-
-  const changeImage = () => {
-    setImage;
+    if (item) {
+      setDescription(item.description);
+      setImage(item.img);
+    }
   };
 
   return (
     <div className="content-box">
       <div className="defense-top">
-        <div className="defense-info"></div>
+        <div className="defense-info">
+          <h3>Deine Verteidigungsanlagen</h3>
+          <ul>
+            <li>
+              <p>Lasergeschuetz: 0</p>
+            </li>
+            <li>
+              <p>Flaggeschuetz: 0</p>
+            </li>
+            <li>
+              <p>Ionenkanone: 0</p>
+            </li>
+            <li>
+              <p>Railgun: 0</p>
+            </li>
+            <li>
+              <p>Partikelgeschuetz: 0</p>
+            </li>
+          </ul>
+        </div>
         <div className="defense-img">
           <img src={image} alt="Verteidigungsanlage"></img>
         </div>
@@ -33,36 +69,43 @@ const Defense = () => {
         <div className="defense-btnbox">
           <button
             className="btn"
-            onClick={
-              (() => changeDescription("lasergeschuetz"), () => changeImage())
-            }
+            onClick={() => setDescription(defaultDescription)}
+          >
+            Übersicht
+          </button>
+          <button
+            className="btn"
+            onClick={() => changeDescriptionAndImage("lasergeschuetz")}
           >
             Lasergeschuetz
           </button>
           <button
             className="btn"
-            onClick={() => changeDescription("flaggeschuetz")}
+            onClick={() => changeDescriptionAndImage("flaggeschuetz")}
           >
             Flaggeschuetz
           </button>
           <button
             className="btn"
-            onClick={() => changeDescription("ionenkanone")}
+            onClick={() => changeDescriptionAndImage("ionenkanone")}
           >
             Ionenkanone
           </button>
-          <button className="btn" onClick={() => changeDescription("railgun")}>
+          <button
+            className="btn"
+            onClick={() => changeDescriptionAndImage("railgun")}
+          >
             Railgun
           </button>
           <button
             className="btn"
-            onClick={() => changeDescription("partikelgeschuetz")}
+            onClick={() => changeDescriptionAndImage("partikelgeschuetz")}
           >
             Partikelgeschuetz
           </button>
         </div>
         <div className="defense-description">
-          <h4>{description}</h4>
+          <p>{description}</p>
         </div>
       </div>
     </div>
