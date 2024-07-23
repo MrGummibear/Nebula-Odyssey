@@ -7,7 +7,7 @@ const Buildings = () => {
                 <h1>Gebaeude</h1>
             </div>
             <div>
-                <h1 className="gebaeude-heading">Kergebaeude</h1>
+                <h1 className="gebaeude-heading">Kerngebaeude</h1>
                 <div className="gebaeude-box one">
                     <div className="text">
                         <h1>Lagerhaus</h1>
