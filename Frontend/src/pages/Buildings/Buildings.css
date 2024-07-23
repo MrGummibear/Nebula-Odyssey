@@ -18,18 +18,15 @@ h1 {
   color: #0e1b24;
 }
 
-.content-box {
-  height: fit-content;
-  min-height: 1000px;
-}
-
 .gebaeude-heading {
-  padding-left: 20px;
+  padding-left: 38px;
   text-decoration: underline #72203b;
+  text-align: left;
+  width: 100%;
 }
 
 .gebaeude-box {
-  width: 95%;
+  width: 94%;
   height: 200px;
   margin: 20px;
   color: white;
