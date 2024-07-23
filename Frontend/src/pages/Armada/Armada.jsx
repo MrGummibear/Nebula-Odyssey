@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
-import './Armada.css';
 import { useState, useEffect } from 'react';
+import './Armada.css';
 import activities from '../../assets/data/activities';
 import units from '../../assets/data/units';
 
@@ -19,10 +19,13 @@ const Armada = () => {
             <section>
                 <h3>Armada im Hangar</h3>
                 <ul>
-                <li className='unit-box-title'><p className='text-left'>Einheit</p><p className='text-right'>Anzahl</p></li>
-                {units.map((unit, index) => (
-                    <Units key={index} unit={unit} />
-                ))}
+                    <li className='unit-box-title'>
+                        <p className='text-left'>Einheit</p>
+                        <p className='text-right'>Anzahl</p>
+                    </li>
+                    {units.map((unit, index) => (
+                        <Units key={index} unit={unit} />
+                    ))}
                 </ul>
             </section>
         </div>
@@ -31,17 +34,54 @@ const Armada = () => {
 
 const Activity = ({ activity }) => {
     const [countdown, setCountdown] = useState(activity.timestamp);
-    const countdownAnimation = {
-        marginTop: '5px',
-        animation: `moveShip ${activity.timestamp}s linear`,
-    }
+    const [showForwardAnimation, setShowForwardAnimation] = useState(true);
+    const [showBackwardAnimation, setShowBackwardAnimation] = useState(false);
+
+    const animationDuration = `${activity.timestamp}s`; // Dauer der Animation aus Timestamp berechnen
 
     useEffect(() => {
+        const forwardAnimationTime = activity.timestamp * 1000; // In Millisekunden
+
+        // Countdown-Timer
         const interval = setInterval(() => {
             setCountdown(prevCountdown => prevCountdown > 0 ? prevCountdown - 1 : 0);
         }, 1000);
 
-        return () => clearInterval(interval);
+        // Vorwärtsanimation starten
+        const forwardAnimation = setTimeout(() => {
+            setShowForwardAnimation(true);
+            setShowBackwardAnimation(false);
+        }, 0); // Sofort starten
+
+        // Vorwärtsanimation beenden
+        const hideForwardAnimationTimeout = setTimeout(() => {
+            setShowForwardAnimation(false);
+        }, forwardAnimationTime);
+
+        // Countdown auf 5 Sekunden setzen
+        const resetCountdown = setTimeout(() => {
+            setCountdown(5);
+        }, forwardAnimationTime); // Nach Abschluss der Vorwärtsanimation
+
+        // Rückwärtsanimation nach 5 Sekunden starten
+        const backwardAnimationTimeout = setTimeout(() => {
+            setShowBackwardAnimation(true);
+            setCountdown(activity.timestamp); // Countdown neu starten
+        }, forwardAnimationTime + 5000); // 5 Sekunden nach Vorwärtsanimation
+
+        // Rückwärtsanimation beenden
+        const hideBackwardAnimationTimeout = setTimeout(() => {
+            setShowBackwardAnimation(false);
+        }, forwardAnimationTime + 5000 + activity.timestamp * 1000); // Rückwärtsanimation-Dauer hinzufügen
+
+        return () => {
+            clearInterval(interval);
+            clearTimeout(forwardAnimation);
+            clearTimeout(hideForwardAnimationTimeout);
+            clearTimeout(resetCountdown);
+            clearTimeout(backwardAnimationTimeout);
+            clearTimeout(hideBackwardAnimationTimeout);
+        };
     }, [activity.timestamp]);
 
     return (
@@ -49,9 +89,9 @@ const Activity = ({ activity }) => {
             <div className='activity-info'>
                 <p>Truppenstärke: {activity.info.Truppenstärke}</p>
                 <ul>
-                {Object.values(activity.info.Einheiten).map((einheit, index) => (
-                    <li key={index}>{einheit}</li>
-                ))}
+                    {Object.values(activity.info.Einheiten).map((einheit, index) => (
+                        <li key={index}>{einheit}</li>
+                    ))}
                 </ul>
             </div>
             <div className='activity-visual'>
@@ -61,7 +101,20 @@ const Activity = ({ activity }) => {
                 </div>
                 <div className='timer'>
                     {countdown}s
-                    <i className="fa-solid fa-shuttle-space" style={countdownAnimation}></i>
+                    {showForwardAnimation && (
+                        <img
+                            src='/icons/spaceship-right.png'
+                            className={`fa-solid fa-shuttle-space ship-forward`}
+                            style={{ animationDuration: animationDuration }}
+                        ></img>
+                    )}
+                    {showBackwardAnimation && (
+                        <img
+                            src='/icons/spaceship-left.png'
+                            className={`ship-backward`}
+                            style={{ animationDuration: animationDuration }}
+                        ></img>
+                    )}
                 </div>
                 <div>
                     <img src={activity.planets[1].img} alt={activity.planets[1].name} />
@@ -70,14 +123,17 @@ const Activity = ({ activity }) => {
             </div>
         </div>
     );
-
 };
 
-const Units = ({ unit }) =>{
-        return(
-            <li className='unit-box'><p className='text-left'>{unit.id}</p><p className='text-right'>{unit.number}</p></li>
-        );
-} 
+const Units = ({ unit }) => {
+    return (
+        <li className='unit-box'>
+            <p className='text-left'>{unit.id}</p>
+            <p className='text-right'>{unit.number}</p>
+        </li>
+    );
+};
 
 export default Armada;
+
 

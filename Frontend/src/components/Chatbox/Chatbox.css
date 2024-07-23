@@ -83,3 +83,7 @@
 i:hover{
     cursor: pointer;
 }
+.chat-message{
+  margin-top: 10px;
+  border-bottom: 1px dotted var(--inactive-color);
+}

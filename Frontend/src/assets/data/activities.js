@@ -7,7 +7,7 @@ const activities = [
                 2: "Schwerer Jaeger",
             },
         },
-        timestamp: 60,
+        timestamp: 5,
         planets: [
             { img: "/planets/p-1.png", name: "Planet 1" },
             { img: "/planets/p-2.png", name: "Planet 2" },

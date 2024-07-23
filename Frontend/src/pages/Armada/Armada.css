@@ -48,10 +48,32 @@ section{
     list-style: none;
 }
 
-@keyframes moveShip {
+@keyframes forwardMove {
     from { transform: translateX(-90px); }
     to { transform: translateX(90px); }
 }
+
+@keyframes backwardMove {
+    from { transform: translateX(90px); }
+    to { transform: translateX(-90px) }
+}
+
+.ship-backward, .ship-forward {
+    height: 25px !important;
+    width: 25px !important;
+}
+.ship-forward {
+    animation: forwardMove linear;
+}
+
+.ship-backward {
+    animation: backwardMove linear;
+}
+
+.ship-hidden {
+    display: none;
+}
+
 
 .timer{
     display: flex;
