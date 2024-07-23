@@ -3,22 +3,12 @@ import { useState } from "react";
 import werftTypen from "../../assets/data/werften";
 
 const Shipyard = () => {
+  // Ships
   const [ships, setShips] = useState([]);
   const [shipImage, setShipImage] = useState(
     `url(/werften/uebersicht-title.png)`
   );
   const [shpiData, setShipData] = useState({});
-  const [count, setCount] = useState(0);
-
-  const incrementCount = () => {
-    setCount(count + 1);
-  };
-
-  const decrementCount = () => {
-    if (count > 0) {
-      setCount(count - 1);
-    }
-  };
 
   const handleShipType = (type) => {
     setShips(werftTypen[type]);
@@ -37,6 +27,29 @@ const Shipyard = () => {
     if (item) {
       setShipData(item.properties);
       setShipImage(`url(${item.img})`);
+    }
+  };
+
+  // Counter
+  const [count, setCount] = useState(0);
+  const maxCount = 100;
+
+  const incrementCount = () => {
+    setCount((prevCount) => (prevCount < maxCount ? prevCount + 1 : prevCount));
+  };
+
+  const decrementCount = () => {
+    setCount((prevCount) => (prevCount > 0 ? prevCount - 1 : 0));
+  };
+
+  const handleInputChange = (event) => {
+    const value = event.target.value;
+    const number = parseInt(value, 10);
+
+    if (!isNaN(number)) {
+      setCount(number > maxCount ? maxCount : number);
+    } else if (value === "") {
+      setCount(0);
     }
   };
 
@@ -104,8 +117,15 @@ const Shipyard = () => {
           </ul>
         </div>
         <div className="build-menu">
-          <input type="text" className="build-counter" value={count} readOnly />
           <div className="increment-decrement">
+            <input
+              type="text"
+              className="build-counter"
+              value={count}
+              onChange={handleInputChange}
+              min="0"
+              max={maxCount}
+            />
             <button className="btn" onClick={incrementCount}>
               +
             </button>
@@ -113,6 +133,7 @@ const Shipyard = () => {
               -
             </button>
           </div>
+          <button className="btn buy-btn">Kaufen</button>
         </div>
       </div>
       <div className="werften-box">
