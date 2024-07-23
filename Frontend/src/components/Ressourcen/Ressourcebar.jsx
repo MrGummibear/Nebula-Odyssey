@@ -1,5 +1,4 @@
 import "./Ressourcebar.css"
-import ImageWithTooltip from './ImageWithTooltip';
 
 const Ressourcebar = () => {
     return (
