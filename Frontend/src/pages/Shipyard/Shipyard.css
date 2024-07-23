@@ -20,12 +20,86 @@ h4 {
 .werften-title {
   width: 100%;
   height: 50rem;
-  /* background-image: url(/werften/uebersicht-title.png); */
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  /* margin-top: 2rem; */
   border: 2px solid var(--accent-color);
+  display: flex;
+  justify-content: space-between;
+}
+
+.ship-data {
+  width: 225px;
+  height: 99%;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #ffffff;
+  text-align: start;
+  padding: 5px 10px 0 10px;
+}
+
+.ship-data li {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  font-size: 14px;
+}
+
+.ship-data li:last-child {
+  border-bottom: none;
+}
+
+.ship-data li span {
+  font-weight: bold;
+  color: #ffdd57; /* Helle Akzentfarbe für die Bezeichner */
+}
+
+.build-menu {
+  width: 200px;
+  height: 100px;
+  border: 2px solid red;
+  position: relative;
+  top: 390px;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #ffffff;
+  text-align: start;
+  padding: 5px 10px 0 10px;
+  display: flex;
+  justify-content: center;
+}
+.build-counter {
+  width: 50px;
+  height: 30px;
+  text-align: center;
+  font-size: 1.2rem;
+  margin-right: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+.increment-decrement {
+  display: flex;
+  flex-direction: column;
+}
+
+.increment-decrement button {
+  width: 30px;
+  height: 30px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  margin: 2px 0;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.increment-decrement button:hover {
+  background-color: #0056b3;
 }
 
 .werften-box {
