@@ -45,6 +45,7 @@ header {
   }
   
   .clock {
+    font-size: 0.8rem;
     min-width: 100px;
     color: white;
   }
