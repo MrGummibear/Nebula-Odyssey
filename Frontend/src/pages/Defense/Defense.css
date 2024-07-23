@@ -33,14 +33,7 @@ ul {
   color: #0e1b24;
 }
 
-.content-box {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  min-height: 1000px;
-  height: fit-content;
-}
+
 
 .defense-top {
   border: 2px solid var(--primary-color);
@@ -122,14 +115,12 @@ ul {
   position: relative;
   display: inline-grid;
   place-content: center;
-  clip-path: polygon(
-    var(--edge-size) 0%,
-    100% 0,
-    100% calc(100% - var(--edge-size)),
-    calc(100% - var(--edge-size)) 100%,
-    0 100%,
-    0% var(--edge-size)
-  );
+  clip-path: polygon(var(--edge-size) 0%,
+      100% 0,
+      100% calc(100% - var(--edge-size)),
+      calc(100% - var(--edge-size)) 100%,
+      0 100%,
+      0% var(--edge-size));
   transition: color 250ms;
   width: 150px;
 }
@@ -148,16 +139,12 @@ ul {
   inset: 0;
   background: var(--background-color);
   z-index: -1;
-  clip-path: polygon(
-    var(--border-width) calc(var(--edge-size) + var(--border-width) * 0.5),
-    calc(var(--edge-size) + var(--border-width) * 0.5) var(--border-width),
-    calc(100% - var(--border-width)) var(--border-width),
-    calc(100% - var(--border-width))
-      calc(100% - calc(var(--edge-size) + var(--border-width) * 0.5)),
-    calc(100% - calc(var(--edge-size) + var(--border-width) * 0.5))
-      calc(100% - var(--border-width)),
-    calc(var(--border-width)) calc(100% - var(--border-width))
-  );
+  clip-path: polygon(var(--border-width) calc(var(--edge-size) + var(--border-width) * 0.5),
+      calc(var(--edge-size) + var(--border-width) * 0.5) var(--border-width),
+      calc(100% - var(--border-width)) var(--border-width),
+      calc(100% - var(--border-width)) calc(100% - calc(var(--edge-size) + var(--border-width) * 0.5)),
+      calc(100% - calc(var(--edge-size) + var(--border-width) * 0.5)) calc(100% - var(--border-width)),
+      calc(var(--border-width)) calc(100% - var(--border-width)));
   transition: clip-path 500ms;
 }
 
@@ -166,18 +153,12 @@ ul {
 }
 
 .btn:hover::after {
-  clip-path: polygon(
-    calc(100% - var(--border-width))
-      calc(100% - calc(var(--edge-size) + var(--border-width) * 0.5)),
-    calc(100% - var(--border-width)) var(--border-width),
-    calc(100% - var(--border-width)) var(--border-width),
-    calc(100% - var(--border-width))
-      calc(100% - calc(var(--edge-size) + var(--border-width) * 0.5)),
-    calc(100% - calc(var(--edge-size) + var(--border-width) * 0.5))
-      calc(100% - var(--border-width)),
-    calc(100% - calc(var(--edge-size) + var(--border-width) * 0.5))
-      calc(100% - var(--border-width))
-  );
+  clip-path: polygon(calc(100% - var(--border-width)) calc(100% - calc(var(--edge-size) + var(--border-width) * 0.5)),
+      calc(100% - var(--border-width)) var(--border-width),
+      calc(100% - var(--border-width)) var(--border-width),
+      calc(100% - var(--border-width)) calc(100% - calc(var(--edge-size) + var(--border-width) * 0.5)),
+      calc(100% - calc(var(--edge-size) + var(--border-width) * 0.5)) calc(100% - var(--border-width)),
+      calc(100% - calc(var(--edge-size) + var(--border-width) * 0.5)) calc(100% - var(--border-width)));
 }
 
 .defense-description {

@@ -302,7 +302,7 @@ const Research = () => {
         </div>
       </div>
       <section className="researchoverview">
-        <div>
+        <div className="researchbuttons">
           <div className="element">
             <input className="f-bergbau" type="button" onClick={() => { changeImg(imgTypes.mining) }} />
             <span className="tooltip">Bergbau</span>

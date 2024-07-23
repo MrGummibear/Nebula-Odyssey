@@ -1,6 +1,7 @@
 .researchheader {
   border: solid rgb(0, 0, 0);
-  height: 40%;
+  width: 100%;
+  height: 400px;
   /* background-image: url("../img/img/forschung/mining-weit.jpg"); */
   background-size: cover;
   background-position: center;
@@ -12,8 +13,11 @@
   width: 100%;
   height: 100%;
   flex-direction: column;
+
   /* flex-wrap: wrap; */
 }
+
+
 
 .researchimg {
   /*background-color: lightblue;*/
@@ -70,6 +74,7 @@ tr>th:nth-child(2) {
 
 .researchoverview {
   display: flex;
+  width: 100%;
   flex-direction: column;
   justify-content: center;
 }
@@ -142,7 +147,7 @@ tr>th:nth-child(2) {
   /* background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1)); */
 }
 
-.left {
+/* .left {
   font-size: 1.2em;
   color: rgb(255, 255, 255);
   text-shadow:
@@ -150,6 +155,14 @@ tr>th:nth-child(2) {
     1px -1px 0 #000,
     -1px 1px 0 #000,
     1px 1px 0 #000;
+} */
+
+.left {
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #ffffff;
+  text-align: start;
+  padding: 5px 10px 0 10px;
 }
 
 .detail-box {
