@@ -2,6 +2,7 @@
 import './Armada.css';
 import { useState, useEffect } from 'react';
 import activities from '../../assets/data/activities';
+import units from '../../assets/data/units';
 
 const Armada = () => {
     return (
@@ -10,17 +11,30 @@ const Armada = () => {
                 <h1>Armada</h1>
             </div>
             <section>
+                <h3>Armada im Einsatz</h3>
                 {activities.map((activity, index) => (
                     <Activity key={index} activity={activity} />
                 ))}
             </section>
-            <section>02</section>
+            <section>
+                <h3>Armada im Hangar</h3>
+                <ul>
+                <li className='unit-box-title'><p className='text-left'>Einheit</p><p className='text-right'>Anzahl</p></li>
+                {units.map((unit, index) => (
+                    <Units key={index} unit={unit} />
+                ))}
+                </ul>
+            </section>
         </div>
     );
 };
 
 const Activity = ({ activity }) => {
     const [countdown, setCountdown] = useState(activity.timestamp);
+    const countdownAnimation = {
+        marginTop: '5px',
+        animation: `moveShip ${activity.timestamp}s linear`,
+    }
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -33,10 +47,12 @@ const Activity = ({ activity }) => {
     return (
         <div className='activity'>
             <div className='activity-info'>
-                <ul>Truppenstärke: {activity.info.Truppenstärke}</ul>
+                <p>Truppenstärke: {activity.info.Truppenstärke}</p>
+                <ul>
                 {Object.values(activity.info.Einheiten).map((einheit, index) => (
                     <li key={index}>{einheit}</li>
                 ))}
+                </ul>
             </div>
             <div className='activity-visual'>
                 <div>
@@ -45,7 +61,7 @@ const Activity = ({ activity }) => {
                 </div>
                 <div className='timer'>
                     {countdown}s
-                    <i className="arrow fa-solid fa-shuttle-space"></i>
+                    <i className="fa-solid fa-shuttle-space" style={countdownAnimation}></i>
                 </div>
                 <div>
                     <img src={activity.planets[1].img} alt={activity.planets[1].name} />
@@ -54,7 +70,14 @@ const Activity = ({ activity }) => {
             </div>
         </div>
     );
+
 };
+
+const Units = ({ unit }) =>{
+        return(
+            <li className='unit-box'><p className='text-left'>{unit.id}</p><p className='text-right'>{unit.number}</p></li>
+        );
+} 
 
 export default Armada;
 
