@@ -33,15 +33,6 @@ ul {
   color: #0e1b24;
 }
 
-.content-box {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  min-height: 1000px;
-  height: fit-content;
-}
-
 .defense-top {
   border: 2px solid var(--primary-color);
   width: 95%;
@@ -49,6 +40,7 @@ ul {
   margin-bottom: 40px;
   display: flex;
   border-radius: 10px;
+  padding: 25px 0 0 25px;
 }
 
 .defense-info {
@@ -82,6 +74,7 @@ ul {
   height: 300px;
   display: flex;
   border-radius: 10px;
+  padding: 25px 0 0 25px;
 }
 
 .defense-btnbox {
