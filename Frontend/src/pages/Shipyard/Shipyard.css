@@ -55,6 +55,15 @@ h4 {
   color: #ffdd57; /* Helle Akzentfarbe für die Bezeichner */
 }
 
+.ship-title {
+  width: 100px;
+  height: 100px;
+  border: 2px solid red;
+  background-color: rgba(0, 0, 0, 0.6);
+  position: relative;
+  left: 100px;
+}
+
 .build-menu {
   width: 180px;
   height: 35px;

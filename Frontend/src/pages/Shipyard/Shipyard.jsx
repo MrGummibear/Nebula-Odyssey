@@ -116,6 +116,7 @@ const Shipyard = () => {
             </li>
           </ul>
         </div>
+        <div className="ship-title"></div>
         <div className="build-menu">
           <div className="increment-decrement">
             <input
