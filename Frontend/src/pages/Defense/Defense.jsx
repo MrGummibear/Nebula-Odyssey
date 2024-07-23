@@ -18,9 +18,11 @@ const defaultDescription = (
   </div>
 );
 
+const defaultImage = `/werften/uebersicht-defense.png`;
+
 const Defense = () => {
   const [description, setDescription] = useState(defaultDescription);
-  const [image, setImage] = useState(`/werften/uebersicht-title.png`);
+  const [image, setImage] = useState(defaultImage);
 
   const changeDescriptionAndImage = (descriptionKey) => {
     let item = null;
@@ -69,7 +71,10 @@ const Defense = () => {
         <div className="defense-btnbox">
           <button
             className="btn"
-            onClick={() => setDescription(defaultDescription)}
+            onClick={() => {
+              setDescription(defaultDescription);
+              setImage(defaultImage);
+            }}
           >
             Übersicht
           </button>
