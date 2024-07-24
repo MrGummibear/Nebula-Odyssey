@@ -1,6 +1,5 @@
 /* Allgemeine Styles */
 .content-box {
-  padding: 20px;
 }
 
 .uebersicht-title h1 {
@@ -8,16 +7,18 @@
 }
 
 .gebaeude-heading {
-  margin: 10px 0;
+  margin: 10px 0 10px 10px;
   text-decoration: underline #72203b;
   text-align: left;
   width: 100%;
 }
 
 .buildings-grid {
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   gap: 20px; /* Abstand zwischen den Boxen */
+  margin-left: 10px;
 }
 
 .gebaeude-box {
@@ -83,3 +84,7 @@
   justify-content: space-around;
   margin-bottom: 20px;
 }
+
+/*.building-section {
+  padding-left: 20px;
+}*/
