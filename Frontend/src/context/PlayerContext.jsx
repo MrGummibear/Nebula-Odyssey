@@ -1,6 +1,5 @@
-/* eslint-disable react/prop-types */
-import { createContext, useState, useEffect } from 'react';
-import mockPlayerData from '../assets/data/mockData';
+import { createContext, useState, useEffect } from "react";
+import mockPlayerData from "../assets/data/mockData";
 
 export const PlayerContext = createContext();
 
@@ -16,23 +15,39 @@ const PlayerProvider = ({ children }) => {
     steel: 0,
     electronics: 0,
     energy: 0,
-});
+  });
 
   useEffect(() => {
-    // Simuliere das Laden von Daten vom Backend
     setPlayerData(mockPlayerData);
   }, []);
 
   const addPlayerData = (data) => {
-    setPlayerData(prevData => [...prevData, data]);
+    setPlayerData((prevData) => [...prevData, data]);
+  };
+
+  const addResourcesToCurrentPlayer = (resources) => {
+    setCurrentPlayer((prevPlayer) => ({
+      ...prevPlayer,
+      ...Object.keys(resources).reduce((acc, key) => {
+        acc[key] = (prevPlayer[key] || 0) + resources[key];
+        return acc;
+      }, {}),
+    }));
   };
 
   return (
-    <PlayerContext.Provider value={{ playerData, addPlayerData, currentPlayer, setCurrentPlayer }}>
+    <PlayerContext.Provider
+      value={{
+        playerData,
+        addPlayerData,
+        currentPlayer,
+        setCurrentPlayer,
+        addResourcesToCurrentPlayer,
+      }}
+    >
       {children}
     </PlayerContext.Provider>
   );
 };
 
 export default PlayerProvider;
-
