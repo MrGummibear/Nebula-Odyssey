@@ -163,30 +163,30 @@ class Building {
     buildingCosts = new RessourceContainer();
     balance = new RessourceContainer();
     GetCostOf(ressource) {
-        return ressource * Mathf.Pow(1.25, level)
+        return ressource * Math.pow(1.25, level)
     }
     GetBuildingTime() {
         return this.buildingTime * Math.pow(1.25, this.level)
     }
     UpdateBuildingCosts() {
-        this.buildingCosts.steel *= Mathf.Pow(1.3, this.level);
-        this.buildingCosts.chemicals *= Mathf.Pow(1.3, this.level);
-        this.buildingCosts.electronics *= Mathf.Pow(1.3, this.level);
-        this.buildingCosts.energy *= Mathf.Pow(1.3, this.level);
-        this.buildingCosts.fuel *= Mathf.Pow(1.3, this.level);
-        this.buildingCosts.ammo *= Mathf.Pow(1.3, this.level);
-        this.buildingCosts.silicium *= Mathf.Pow(1.3, this.level);
-        this.buildingCosts.ore *= Mathf.Pow(1.3, this.level);
+        this.buildingCosts.steel *= Math.pow(1.3, this.level);
+        this.buildingCosts.chemicals *= Math.pow(1.3, this.level);
+        this.buildingCosts.electronics *= Math.pow(1.3, this.level);
+        this.buildingCosts.energy *= Math.pow(1.3, this.level);
+        this.buildingCosts.fuel *= Math.pow(1.3, this.level);
+        this.buildingCosts.ammo *= Math.pow(1.3, this.level);
+        this.buildingCosts.silicium *= Math.pow(1.3, this.level);
+        this.buildingCosts.ore *= Math.pow(1.3, this.level);
     }
     UpdateBalance() {
-        this.balance.steel *= Mathf.Pow(1.25, this.level);
-        this.balance.chemicals *= Mathf.Pow(1.25, this.level);
-        this.balance.electronics *= Mathf.Pow(1.25, this.level);
-        this.balance.energy *= Mathf.Pow(1.25, this.level);
-        this.balance.fuel *= Mathf.Pow(1.25, this.level);
-        this.balance.ammo *= Mathf.Pow(1.25, this.level);
-        this.balance.silicium *= Mathf.Pow(1.25, this.level);
-        this.balance.ore *= Mathf.Pow(1.25, this.level);
+        this.balance.steel *= Math.pow(1.25, this.level);
+        this.balance.chemicals *= Math.pow(1.25, this.level);
+        this.balance.electronics *= Math.pow(1.25, this.level);
+        this.balance.energy *= Math.pow(1.25, this.level);
+        this.balance.fuel *= Math.pow(1.25, this.level);
+        this.balance.ammo *= Math.pow(1.25, this.level);
+        this.balance.silicium *= Math.pow(1.25, this.level);
+        this.balance.ore *= Math.pow(1.25, this.level);
     }
 }
 class MiningStation extends Building {
@@ -316,7 +316,7 @@ class Research {
     siliciumCost;
     oreCost;
     GetCostOf(ressource) {
-        return ressource * Mathf.Pow(1.25, level)
+        return ressource * Math.pow(1.25, level)
     }
     GetResearchTime() {
         return this.researchTime * Math.pow(1.25, this.level)
