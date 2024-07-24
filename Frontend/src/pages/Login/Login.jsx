@@ -7,12 +7,15 @@ const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
-  const { addPlayerData } = useContext(PlayerContext);
+  const { playerData, setCurrentPlayer } = useContext(PlayerContext);
 
   const handleLogin = (e) => {
     e.preventDefault(); // Verhindert das Standard-Formular-Submit-Verhalten
-    const playerData = { username, password };
-    addPlayerData(playerData); // Daten zum globalen Zustand hinzufügen
+    playerData.map((currentUser) => {
+        if (currentUser.username === username && currentUser.password === password){
+            setCurrentPlayer({...currentUser})
+        }
+    }) // Daten zum globalen Zustand hinzufügen
     navigate("/overview");
   };
 

@@ -1,6 +1,6 @@
 
 import './css/App.css'
-import { PlayerProvider } from './context/PlayerContext'; 
+import PlayerProvider from './context/PlayerContext'; 
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import SharedLayout from './pages/SharedLayout'
 import Overview from './pages/Overview/Overview'
@@ -12,6 +12,7 @@ import Defense from './pages/Defense/Defense'
 import Armada from './pages/Armada/Armada'
 import NotFound from './pages/NotFound/NotFound'
 import Login from './pages/Login/Login'
+import StarField from './components/Starfield/StarField';
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
     <>
       <PlayerProvider>
         <BrowserRouter>
+        <StarField />
           <Routes>
             <Route index element={<Login />} /> 
             <Route path='/' element={<SharedLayout/>}>

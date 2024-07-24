@@ -1,6 +1,7 @@
 import "./Shipyard.css";
-import { useState } from "react";
+import { useEffect, useContext, useState } from "react";
 import werftTypen from "../../assets/data/werften";
+import { PlayerContext } from "../../context/PlayerContext";
 
 const Shipyard = () => {
   // Ships
@@ -11,9 +12,12 @@ const Shipyard = () => {
   const [shipData, setShipData] = useState({});
   const [shipTitle, setShipTitle] = useState("");
   const [shipDescription, setShipDescription] = useState("");
+  const [activeShip, setActiveShip] = useState("");
+  const [activeType, setActiveType] = useState(""); // State for active type button
 
   const handleShipType = (type) => {
     setShips(werftTypen[type]);
+    setActiveType(type); // Set the active type button
   };
 
   const changeDescriptionAndImage = (descriptionKey) => {
@@ -31,6 +35,7 @@ const Shipyard = () => {
       setShipImage(`url(${item.img})`);
       setShipTitle(item.label);
       setShipDescription(item.description);
+      setActiveShip(descriptionKey); // Set the active ship button
     }
   };
 
@@ -56,6 +61,57 @@ const Shipyard = () => {
       setCount(0);
     }
   };
+
+  //Buy
+
+  const { currentPlayer, setCurrentPlayer } = useContext(PlayerContext);
+  const [buyMessage, setBuyMessage] = useState("");
+
+  const buyShip = (descriptionKey) => {
+    let item = null;
+    ["klein", "mittel", "gross"].forEach((size) => {
+      if (!item) {
+        item = werftTypen[size].find(
+          (element) => element.id === descriptionKey
+        );
+      }
+    });
+
+    if (item) {
+      const totalSteelCost = item.properties.steelcosts * count;
+      const totalElectronicsCost = item.properties.mikroshipkosten * count;
+      const totalChemicalCost = item.properties.chemicalcosts * count;
+      const totalEnergyCost = item.properties.energycosts * count;
+
+      if (
+        currentPlayer.steel >= totalSteelCost &&
+        currentPlayer.electronics >= totalElectronicsCost &&
+        currentPlayer.chem >= totalChemicalCost &&
+        currentPlayer.energy >= totalEnergyCost
+      ) {
+        const updatedPlayer = {
+          ...currentPlayer,
+          steel: currentPlayer.steel - totalSteelCost,
+          electronics: currentPlayer.electronics - totalElectronicsCost,
+          chem: currentPlayer.chem - totalChemicalCost,
+          energy: currentPlayer.energy - totalEnergyCost,
+        };
+
+        setCurrentPlayer(updatedPlayer);
+        setBuyMessage(`${count}x ${activeShip} gekauft!`);
+      } else setBuyMessage(`Nicht genügend Ressourcen!`);
+    }
+  };
+
+  useEffect(() => {
+    if (buyMessage) {
+      const timer = setTimeout(() => {
+        setBuyMessage("");
+      }, 2000);
+
+      return () => clearTimeout(timer);
+    }
+  }, [buyMessage]);
 
   return (
     <div className="content-box">
@@ -127,7 +183,6 @@ const Shipyard = () => {
               <p className="data-right">{shipData.energycosts}</p>
             </li>
           </ul>
-
           <div className="increment-decrement">
             <input
               type="text"
@@ -144,29 +199,31 @@ const Shipyard = () => {
               +
             </button>
           </div>
-          <button className="btn buy-btn">Kaufen</button>
+          <button className="btn buy-btn" onClick={() => buyShip(activeShip)}>
+            Kaufen
+          </button>
+          <p className="buy-message">{buyMessage}</p>
         </div>
       </div>
       <div className="werften-box">
         <div className="werft">
           <div className="werft-bar">
             <button
-              className="btn"
+              className={`btn ${activeType === "klein" ? "active" : ""}`}
               id="change-klein"
               onClick={() => handleShipType("klein")}
             >
-              {" "}
               Kleine Werft
             </button>
             <button
-              className="btn"
+              className={`btn ${activeType === "mittel" ? "active" : ""}`}
               id="change-mittel"
               onClick={() => handleShipType("mittel")}
             >
               Mittlere Werft
             </button>
             <button
-              className="btn"
+              className={`btn ${activeType === "gross" ? "active" : ""}`}
               id="change-gross"
               onClick={() => handleShipType("gross")}
             >
@@ -178,7 +235,9 @@ const Shipyard = () => {
               <button
                 key={ship.id}
                 id={ship.id}
-                className={ship.class}
+                className={`${ship.class} ${
+                  activeShip === ship.id ? "active" : ""
+                }`}
                 onClick={() => changeDescriptionAndImage(ship.id)}
               >
                 {ship.label}
