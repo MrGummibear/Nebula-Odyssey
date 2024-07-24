@@ -76,7 +76,7 @@ const Defense = () => {
             onClick={() => {
               setDescription(defaultDescription);
               setImage(defaultImage);
-              setActive(""); // Set the active button
+              setActive("");
             }}
           >
             Übersicht
