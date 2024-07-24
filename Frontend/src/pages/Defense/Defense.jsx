@@ -23,6 +23,7 @@ const defaultImage = `/werften/uebersicht-defense.png`;
 const Defense = () => {
   const [description, setDescription] = useState(defaultDescription);
   const [image, setImage] = useState(defaultImage);
+  const [active, setActive] = useState("");
 
   const changeDescriptionAndImage = (descriptionKey) => {
     let item = null;
@@ -37,6 +38,7 @@ const Defense = () => {
     if (item) {
       setDescription(item.description);
       setImage(item.img);
+      setActive(descriptionKey); // Set the active button
     }
   };
 
@@ -70,40 +72,41 @@ const Defense = () => {
       <div className="defense-bot">
         <div className="defense-btnbox">
           <button
-            className="btn"
+            className={`btn ${active === "" ? "active" : ""}`}
             onClick={() => {
               setDescription(defaultDescription);
               setImage(defaultImage);
+              setActive(""); // Set the active button
             }}
           >
             Übersicht
           </button>
           <button
-            className="btn"
+            className={`btn ${active === "lasergeschuetz" ? "active" : ""}`}
             onClick={() => changeDescriptionAndImage("lasergeschuetz")}
           >
             Lasergeschuetz
           </button>
           <button
-            className="btn"
+            className={`btn ${active === "flaggeschuetz" ? "active" : ""}`}
             onClick={() => changeDescriptionAndImage("flaggeschuetz")}
           >
             Flaggeschuetz
           </button>
           <button
-            className="btn"
+            className={`btn ${active === "ionenkanone" ? "active" : ""}`}
             onClick={() => changeDescriptionAndImage("ionenkanone")}
           >
             Ionenkanone
           </button>
           <button
-            className="btn"
+            className={`btn ${active === "railgun" ? "active" : ""}`}
             onClick={() => changeDescriptionAndImage("railgun")}
           >
             Railgun
           </button>
           <button
-            className="btn"
+            className={`btn ${active === "partikelgeschuetz" ? "active" : ""}`}
             onClick={() => changeDescriptionAndImage("partikelgeschuetz")}
           >
             Partikelgeschuetz
