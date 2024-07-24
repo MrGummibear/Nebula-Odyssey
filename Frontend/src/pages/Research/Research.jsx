@@ -227,7 +227,7 @@ const imgTypes = {
 }
 
 const Research = () => {
-  const [activeObject, setActive] = useState({});
+  const [activeObject, setActive] = useState(imgTypes.blank);
 
   const changeImg = (imgTypeObj) => {
     if (activeObject.id === imgTypes.blank.id) {
@@ -290,15 +290,17 @@ const Research = () => {
               </tbody>
             </table>
           </div>
-          <div id="r-footer" className="researchfooter">
-            <div className="box-left">
-              <p className="left">{activeObject.description || imgTypes.blank.description}</p>
-            </div>
-            <div className="detail-box">
-              <button className="right btn" type="button">Forschung starten</button>
-              <button className="right btn" type="button">Details</button>
-            </div>
-          </div>
+          {activeObject.id !== imgTypes.blank.id && (
+  <div id="r-footer" className="researchfooter">
+    <div className="box-left">
+      <p className="left">{activeObject.description || imgTypes.blank.description}</p>
+    </div>
+    <div className="detail-box">
+      <button className="right btn" type="button">Forschung starten</button>
+      <button className="right btn" type="button">Details</button>
+    </div>
+  </div>
+)}
         </div>
       </div>
       <section className="researchoverview">
