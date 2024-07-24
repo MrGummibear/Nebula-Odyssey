@@ -1,8 +1,16 @@
 
 
 class Player {
-    constructor() {
+    constructor(steel, chemicals, electronics, energy, fuel, ammo, silicium, ore) {
+        
         this.Planets.push(new Planet())
+        this.Planets.push(new Planet())
+        this.Planets.push(new Planet())
+        this.Planets.push(new Planet())
+        this.Planets.push(new Planet())
+        this.Planets.forEach(element => {
+            element.planetRessources.Set(20000,20000,20000,20000,20000,20000,20000,20000);
+        });
     }
     technologie = {
         mining: 0,
@@ -29,7 +37,7 @@ class Planet {
     constructor() {
         this.basicIncome = new RessourceContainer();
         this.currentIncome = new RessourceContainer();
-        this.basicIncome.Set(10, 10, 10, 10, 10, 0, 10, 10)
+        this.basicIncome.Set(10, 30, 10, 10, 10, 0, 10, 10)
     }
     planetRessources = new RessourceContainer();
 
@@ -46,7 +54,7 @@ class Planet {
         this.mediumShipyard = new MediumShipyard(),
         this.bigShipyard = new LargeShipyard(),
         this.researchCenter = new ResearchCenter(),
-        this.shieldGenerator = 0,
+        //this.shieldGenerator = 0,
     ]
 
 
@@ -102,59 +110,99 @@ class Planet {
         this.ore 
      */
         ManageRessourceBalance() {
-            console.log("test für einen ressourcentick");
-            
-            // Initialisieren des Gesamtsaldos
             let totalBalance = new RessourceContainer();
+            totalBalance = RessourceContainer.Addition(totalBalance, this.basicIncome);
             let totalEnergy = 0;
         
-            // Berechnen des Gesamtsaldos und der Gesamtenergie
             this.buildings.forEach(element => {
                 totalBalance = RessourceContainer.Addition(totalBalance, element.balance);
                 totalEnergy += element.balance.energy;
             });
-        
-            // Ressourcenverbrauch überprüfen und anpassen, falls nicht ausreichend
-            if (totalBalance.fuel < 0 && this.planetRessources.fuel + totalBalance.fuel < 0) {
-                let deficit = totalBalance.fuel + this.planetRessources.fuel;
-                totalBalance.fuel = -this.planetRessources.fuel;
-        
-                // Anpassung des Defizits auf andere Ressourcen, falls notwendig
-                let keys = Object.keys(totalBalance);
-                let adjustFactor = -deficit / (keys.length - 1); // -1, um 'fuel' auszuschließen
-                keys.forEach(key => {
-                    if (key !== 'fuel') {
-                        totalBalance[key] += adjustFactor;
-                        if (totalBalance[key] < 0) {
-                            totalBalance[key] = 0;
-                        }
+            if (totalBalance.energy < 0) {
+                this.buildings.forEach(element => {
+                    if (element.balance.energy < 0) {
+                        let reductionFactor = Math.abs(totalBalance.energy / element.balance.energy);
+                        element.balance.steel *= reductionFactor;
+                        element.balance.chemicals *= reductionFactor;
+                        element.balance.electronics *= reductionFactor;
+                        element.balance.fuel *= reductionFactor;
+                        element.balance.ammo *= reductionFactor;
+                        element.balance.silicium *= reductionFactor;
+                        element.balance.ore *= reductionFactor;
+                        element.balance.energy *= reductionFactor;
+                    }
+                });
+            }
+            if (totalBalance.chemicals < 0) {
+                this.buildings.forEach(element => {
+                    if (element.balance.fuel > 0) {
+                        let reductionFactor = Math.abs(totalBalance.chemicals / element.balance.chemicals);
+                        element.balance.steel *= reductionFactor;
+                        element.balance.chemicals *= reductionFactor;
+                        element.balance.electronics *= reductionFactor;
+                        element.balance.fuel *= reductionFactor;
+                        element.balance.ammo *= reductionFactor;
+                        element.balance.silicium *= reductionFactor;
+                        element.balance.ore *= reductionFactor;
+                        element.balance.energy *= reductionFactor;
+                    }
+                });
+            }
+            if (totalBalance.ore < 0) {
+                this.buildings.forEach(element => {
+                    if (element.balance.steel > 0) {
+                        let reductionFactor = Math.abs(totalBalance.ore / element.balance.ore);
+                        element.balance.steel *= reductionFactor;
+                        element.balance.chemicals *= reductionFactor;
+                        element.balance.electronics *= reductionFactor;
+                        element.balance.fuel *= reductionFactor;
+                        element.balance.ammo *= reductionFactor;
+                        element.balance.silicium *= reductionFactor;
+                        element.balance.ore *= reductionFactor;
+                        element.balance.energy *= reductionFactor;
+                    }
+                });
+            }
+            if (totalBalance.steel < 0 || totalBalance.electronics < 0) {
+                this.buildings.forEach(element => {
+                    if (element.balance.ammo > 0) {
+                        let reductionFactor = Math.min(
+                            totalBalance.steel / element.balance.steel,
+                            totalBalance.electronics / element.balance.electronics
+                        );
+                        element.balance.steel *= reductionFactor;
+                        element.balance.chemicals *= reductionFactor;
+                        element.balance.electronics *= reductionFactor;
+                        element.balance.fuel *= reductionFactor;
+                        element.balance.ammo *= reductionFactor;
+                        element.balance.silicium *= reductionFactor;
+                        element.balance.ore *= reductionFactor;
+                        element.balance.energy *= reductionFactor;
                     }
                 });
             }
         
-            if (totalBalance.energy < 0 && this.planetRessources.energy + totalEnergy < 0) {
-                let deficit = totalBalance.energy + this.planetRessources.energy;
-                totalBalance.energy = -this.planetRessources.energy;
-        
-                // Anpassung des Defizits auf andere Ressourcen, falls notwendig
-                let keys = Object.keys(totalBalance);
-                let adjustFactor = -deficit / (keys.length - 1); // -1, um 'energy' auszuschließen
-                keys.forEach(key => {
-                    if (key !== 'energy') {
-                        totalBalance[key] += adjustFactor;
-                        if (totalBalance[key] < 0) {
-                            totalBalance[key] = 0;
-                        }
+            if (totalBalance.ore < 0 || totalBalance.chemicals < 0 || totalBalance.silicium < 0) {
+                this.buildings.forEach(element => {
+                    if (element.balance.steel > 0 || element.balance.electronics > 0) {
+                        let reductionFactor = Math.min(
+                            totalBalance.ore / element.balance.ore,
+                            totalBalance.chemicals / element.balance.chemicals,
+                            totalBalance.silicium / element.balance.silicium
+                        );
+                        element.balance.steel *= reductionFactor;
+                        element.balance.chemicals *= reductionFactor;
+                        element.balance.electronics *= reductionFactor;
+                        element.balance.fuel *= reductionFactor;
+                        element.balance.ammo *= reductionFactor;
+                        element.balance.silicium *= reductionFactor;
+                        element.balance.ore *= reductionFactor;
+                        element.balance.energy *= reductionFactor;
                     }
                 });
             }
-        
-            // Ressourcenproduktion hinzufügen
             this.planetRessources = RessourceContainer.Addition(this.planetRessources, totalBalance);
-        
-            // Log der aktuellen Ressourcenstände
-            console.log("Aktueller Ressourcenstand: ", this.planetRessources);
-        } 
+        }
 }
 class Building {
     level = 0;
@@ -199,14 +247,14 @@ class MiningStation extends Building {
 class FuelFactory extends Building {
     constructor() {
         super();
-        this.balance.Set(0, -20, 0, 0, 30, 0, 0, 0)
+        this.balance.Set(0, -10, 0, 0, 30, 0, 0, 0)
         this.buildingCosts.Set(150, 0, 80, 20, 0, 0, 0, 20)
     }
 }
 class Raffinery extends Building {
     constructor() {
         super();
-        this.balance.Set(30, -20, 30, 0, 0, 0, -20, -20)
+        this.balance.Set(30, -10, 30, 0, 0, 0, -20, -20)
         this.buildingCosts.Set(150, 0, 60, 30, 0, 0, 0, 10)
     }
 }

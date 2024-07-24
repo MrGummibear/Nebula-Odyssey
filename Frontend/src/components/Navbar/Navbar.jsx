@@ -1,38 +1,42 @@
-import "./Navbar.css"
-import { useState, useContext } from "react";
+import "./Navbar.css";
+import { useState, useEffect, useContext } from "react";
 import { NavLink } from "react-router-dom";
 import { PlayerContext } from '../../context/PlayerContext';
 import Playermanager from '../../../public/javascript/playermanager.js';
 
-const player = new Playermanager.Player()
-player.Planets.push (new Playermanager.Planet())
-player.Planets.push (new Playermanager.Planet())
-player.Planets.push (new Playermanager.Planet())
-player.Planets.push (new Playermanager.Planet())
-
-const ManageRessource = () => {
-    player.Planets.forEach (element => {
-        element.ManageRessourceBalance();
-        console.log(player.Planets[0].planetRessources);
-    })};
+let player = new Playermanager.Player();
+player.Planets.push(new Playermanager.Planet());
+player.Planets.push(new Playermanager.Planet());
+player.Planets.push(new Playermanager.Planet());
+player.Planets.push(new Playermanager.Planet());
 
 const Clock = () => {
-    let time = new Date().toLocaleTimeString();
-    const [currentTime, setCurrentTime] = useState(time);
+    const [currentTime, setCurrentTime] = useState(new Date().toLocaleTimeString());
 
     const updateTime = () => {
-        let time = new Date().toLocaleTimeString();
-        setCurrentTime(time);
-    }
-    setInterval(updateTime, 1000);
-    setInterval(ManageRessource, 1000);
+        setCurrentTime(new Date().toLocaleTimeString());
+    };
+
+    const ManageTimeFunctions = () => {
+        player.Planets.forEach(element => {
+            element.ManageRessourceBalance();
+            console.log(player.Planets[0].planetRessources);
+        });
+        updateTime();
+    };
+
+    useEffect(() => {
+        const intervalId = setInterval(ManageTimeFunctions, 1000);
+
+        return () => clearInterval(intervalId);
+    }, []); //
 
     return (
         <>
             {currentTime}
         </>
-    )
-}
+    );
+};
 
 const Navbar = () => {
     const { currentPlayer } = useContext(PlayerContext);
