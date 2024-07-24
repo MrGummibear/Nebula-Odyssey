@@ -51,6 +51,8 @@ class Planet {
     UpgradeBuilding(building) {
         if (RessourceContainer.Substrate(this.planetRessources, building.buildingCosts) !== false) {
             this.planetRessources = RessourceContainer.Substrate(this.planetRessources, building.buildingCosts);
+            building.UpdateBalance();
+            building.UpdateBuildingCosts();
             building.level++;
         }
     }
@@ -97,7 +99,7 @@ class Planet {
         this.ore 
      */
     ManageRessourceBalance() {
-
+        console.log("test für einen ressourcentick")
     }
 }
 class Building {
@@ -122,15 +124,15 @@ class Building {
         this.buildingCosts.silicium *= Mathf.Pow(1.3, this.level);
         this.buildingCosts.ore *= Mathf.Pow(1.3, this.level);
     }
-    UpdateBalance(){
-        this.balance.steel*= Mathf.Pow(1.25,this.level);
-        this.balance.chemicals*= Mathf.Pow(1.25,this.level);
-        this.balance.electronics*= Mathf.Pow(1.25,this.level);
-        this.balance.energy*= Mathf.Pow(1.25,this.level);
-        this.balance.fuel*= Mathf.Pow(1.25,this.level);
-        this.balance.ammo*= Mathf.Pow(1.25,this.level);
-        this.balance.silicium*= Mathf.Pow(1.25,this.level);
-        this.balance.ore*= Mathf.Pow(1.25,this.level);
+    UpdateBalance() {
+        this.balance.steel *= Mathf.Pow(1.25, this.level);
+        this.balance.chemicals *= Mathf.Pow(1.25, this.level);
+        this.balance.electronics *= Mathf.Pow(1.25, this.level);
+        this.balance.energy *= Mathf.Pow(1.25, this.level);
+        this.balance.fuel *= Mathf.Pow(1.25, this.level);
+        this.balance.ammo *= Mathf.Pow(1.25, this.level);
+        this.balance.silicium *= Mathf.Pow(1.25, this.level);
+        this.balance.ore *= Mathf.Pow(1.25, this.level);
     }
 }
 class MiningStation extends Building {
