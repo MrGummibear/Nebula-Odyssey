@@ -1,12 +1,17 @@
 import './Overview.css'
+import { useContext } from "react";
+import { PlayerContext } from '../../context/PlayerContext';
 
 const Overview = () => {
+    const { playerData } = useContext(PlayerContext);
+    const currentUser = playerData.length > 0 ? playerData[playerData.length - 1].username : 'Guest';
+
     return (
        <div className="content-box">
             <div className="uebersicht-title"><h1>Übersicht</h1></div>
             <div className="topcontent">
               <div className="uebersicht-topcontent">
-                <h1>Willkommen <em>Playername</em>!</h1>
+                <h1 className='uebersicht-user'>Willkommen <em>{currentUser}</em>!</h1>
               </div>
             </div>
             <div className="uebersicht-midcontent">

@@ -1,9 +1,10 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import './Chatbox.css';
 
 const Chatbox = () => {
   const [messages, setMessages] = useState([]);
   const [message, setMessage] = useState('');
+  const chatWindowRef = useRef(null);  // Ref für das Chat-Fenster
   
   const handleSendMessage = (e) => {
     e.preventDefault();
@@ -15,7 +16,7 @@ const Chatbox = () => {
 
   const generateDummyMessage = () => {
     const dummyMessages = [
-      { text: 'Wie geht es dir?', sender: 'Oscar' },
+      { text: 'Wie geht es dir? loool', sender: 'Oscar' },
       { text: 'Ich bin ein Dummy-Chat. Wie kann ich dir helfen?', sender: 'Bot' },
       { text: 'Was machst du heute?', sender: 'Manuel' },
       { text: 'Hast du schon die neuesten Nachrichten gesehen?', sender: 'Michael' },
@@ -56,6 +57,12 @@ const Chatbox = () => {
     };
   }, []);
 
+  useEffect(() => {
+    if (chatWindowRef.current) {
+      chatWindowRef.current.scrollTop = chatWindowRef.current.scrollHeight;
+    }
+  }, [messages]);
+
   return (
     <div className="chat">
       <div className="messages">
@@ -65,7 +72,7 @@ const Chatbox = () => {
         <i className="fa-solid fa-user-gear"></i>
       </div>
       <div className="chat-box">
-        <div className="chat-window">
+        <div className="chat-window" ref={chatWindowRef}>
           {messages.map((msg, index) => (
             <div key={index} className="chat-message">
               <strong>{msg.sender}:</strong> {msg.text}

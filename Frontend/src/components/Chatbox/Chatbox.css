@@ -85,5 +85,6 @@ i:hover{
 }
 .chat-message{
   margin-top: 10px;
+  padding-bottom: 5px;
   border-bottom: 1px dotted var(--inactive-color);
 }

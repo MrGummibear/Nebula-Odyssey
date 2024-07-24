@@ -16,7 +16,15 @@
   
   .uebersicht-title > h1 {
     color: white;
+    padding-bottom: 5px;
     font-size: 5rem;
+  }
+
+  .uebersicht-user{
+    display: inline-block;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 15px;
+    border-radius: 15px;
   }
   
   .topcontent {
@@ -99,5 +107,6 @@
   
   .uebersicht-status > h4 {
     margin-bottom: 0.8rem;
+    padding-bottom: 5px;
     border-bottom: 1px var(--secondary-color) solid;
   }

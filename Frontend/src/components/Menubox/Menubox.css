@@ -1,11 +1,6 @@
-/*.main-content {
-    display: grid;
-    grid-template-columns: 1px repeat(2, 1fr) 1px repeat(5, 1fr);
-    grid-template-rows: repeat(5, 1fr);
-  }*/
+@import '../../css/fonts.css';
   
   .logo {
-    /*grid-area: 1 / 3 / 2 / 4;*/
     display: flex;
     justify-content: center;
     align-items: center;
@@ -17,7 +12,6 @@
   } 
   
   .menu-box {
-    /*grid-area: 2 / 3 / 5 / 4;*/
     width: 250px;
     height: 400px;
     display: flex;
@@ -32,6 +26,7 @@
   
   /* menu-buttons */
   .btn {
+    font-family: Inconsolata-bold, sans-serif;
     --background-color: var(--tertiary-color);
     --border-color: linear-gradient(to bottom right, #0e1b24, #72203b);
     --border-width: 0.2em;

@@ -1,5 +1,7 @@
 import "./Navbar.css"
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { NavLink } from "react-router-dom";
+import { PlayerContext } from '../../context/PlayerContext';
 
 const Clock = () => {
     let time = new Date().toLocaleTimeString();
@@ -19,17 +21,24 @@ const Clock = () => {
 }
 
 const Navbar = () => {
+    const { playerData } = useContext(PlayerContext);
+    const currentUser = playerData.length > 0 ? playerData[playerData.length - 1].username : 'Guest';
+
     return (
         <header>
             <div className="head-bar">
-                <a href="#">HOME</a>
-                <a href="#">NOTIZEN</a>
-                <a href="#">HIGHSCORE</a>
-                <a href="#">EINSTELLUNGEN</a>
-                <a href="#">SUPPORT</a>
-                <a href="#">LOGOUT</a>
+                <NavLink to='/overview' activeClassName='active'>HOME</NavLink>
+                <NavLink to='#' activeClassName='active'>NOTIZEN</NavLink>
+                <NavLink to='#' activeClassName='active'>HIGHSCORE</NavLink>
+                <NavLink to='#' activeClassName='active'>EINSTELLUNGEN</NavLink>
+                <NavLink to='#' activeClassName='active'>SUPPORT</NavLink>
+                <NavLink to='/' activeClassName='active'>LOGOUT</NavLink>
             </div>
-            <div className="player"><a href="#">PLAYER</a></div>
+            {playerData && (
+                <div className="player">
+                    <a href="#">{currentUser}</a>
+                </div>
+            )}
             <div className="clock" id="clock">
                 <p><Clock/></p>
             </div>
