@@ -6,7 +6,17 @@ export const PlayerContext = createContext();
 
 const PlayerProvider = ({ children }) => {
   const [playerData, setPlayerData] = useState([]);
-  const [currentPlayer, setCurrentPlayer] = useState([]);
+  const [currentPlayer, setCurrentPlayer] = useState({
+    username: "Guest",
+    silica: 0,
+    ore: 0,
+    chem: 0,
+    fuel: 0,
+    ammo: 0,
+    steel: 0,
+    electronics: 0,
+    energy: 0,
+});
 
   useEffect(() => {
     // Simuliere das Laden von Daten vom Backend

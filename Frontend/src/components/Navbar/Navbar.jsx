@@ -31,7 +31,7 @@ const Navbar = () => {
                 <NavLink to='#' className={({ isActive }) => isActive ? 'active' : ''}>HIGHSCORE</NavLink>
                 <NavLink to='#' className={({ isActive }) => isActive ? 'active' : ''}>EINSTELLUNGEN</NavLink>
                 <NavLink to='#' className={({ isActive }) => isActive ? 'active' : ''}>SUPPORT</NavLink>
-                <NavLink to='/' className={({ isActive }) => isActive ? 'active' : ''}>LOGOUT</NavLink>
+                <NavLink to='/' className={({ isActive }) => isActive ? 'active' : ''}>{ currentPlayer && currentPlayer.username === 'Guest' ? 'LOGIN' : 'LOGOUT'}</NavLink>
             </div>
                 <div className="player">
                     <a href="#">{currentPlayer.username}</a>
