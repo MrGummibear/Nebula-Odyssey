@@ -10,7 +10,7 @@ const Overview = () => {
             <div className="uebersicht-title"><h1>Übersicht</h1></div>
             <div className="topcontent">
               <div className="uebersicht-topcontent">
-                <h1 className='uebersicht-user'>Willkommen, <em>{currentPlayer.username || 'Guest'}</em>!</h1>
+                <h1 className='uebersicht-user'>Willkommen, <em>{currentPlayer.username}</em>!</h1>
               </div>
             </div>
             <div className="uebersicht-midcontent">
