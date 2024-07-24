@@ -239,6 +239,11 @@ h4 {
   width: 130px;
 }
 
+.active {
+  --background-color: linear-gradient(to bottom right, #0e1b24, #72203b);
+  color: white;
+}
+
 @media screen and (max-width: 1440px) {
   .btn-box > .btn {
     width: 100px;

@@ -11,9 +11,12 @@ const Shipyard = () => {
   const [shipData, setShipData] = useState({});
   const [shipTitle, setShipTitle] = useState("");
   const [shipDescription, setShipDescription] = useState("");
+  const [activeShip, setActiveShip] = useState("");
+  const [activeType, setActiveType] = useState(""); // State for active type button
 
   const handleShipType = (type) => {
     setShips(werftTypen[type]);
+    setActiveType(type); // Set the active type button
   };
 
   const changeDescriptionAndImage = (descriptionKey) => {
@@ -31,6 +34,7 @@ const Shipyard = () => {
       setShipImage(`url(${item.img})`);
       setShipTitle(item.label);
       setShipDescription(item.description);
+      setActiveShip(descriptionKey); // Set the active ship button
     }
   };
 
@@ -151,22 +155,21 @@ const Shipyard = () => {
         <div className="werft">
           <div className="werft-bar">
             <button
-              className="btn"
+              className={`btn ${activeType === "klein" ? "active" : ""}`}
               id="change-klein"
               onClick={() => handleShipType("klein")}
             >
-              {" "}
               Kleine Werft
             </button>
             <button
-              className="btn"
+              className={`btn ${activeType === "mittel" ? "active" : ""}`}
               id="change-mittel"
               onClick={() => handleShipType("mittel")}
             >
               Mittlere Werft
             </button>
             <button
-              className="btn"
+              className={`btn ${activeType === "gross" ? "active" : ""}`}
               id="change-gross"
               onClick={() => handleShipType("gross")}
             >
@@ -178,7 +181,9 @@ const Shipyard = () => {
               <button
                 key={ship.id}
                 id={ship.id}
-                className={ship.class}
+                className={`${ship.class} ${
+                  activeShip === ship.id ? "active" : ""
+                }`}
                 onClick={() => changeDescriptionAndImage(ship.id)}
               >
                 {ship.label}
