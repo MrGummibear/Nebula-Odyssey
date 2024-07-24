@@ -5,7 +5,9 @@ const Menubox = () => {
     return (
         <div className="main-content">
           <div className="logo">
-            <img src="/icons/logo_placeholder.png" alt="" />
+            <NavLink to='/overview' activeClassName='active'>
+                <img src="/icons/logo_placeholder.png" alt="logo" />
+            </NavLink>
           </div>
           <div className="menu-box">
             <NavLink to='/overview' activeClassName='active'>
