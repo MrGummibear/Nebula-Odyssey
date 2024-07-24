@@ -1,13 +1,17 @@
 import "./Ressourcebar.css"
+import { useContext } from "react";
+import { PlayerContext } from '../../context/PlayerContext';
 
 const Ressourcebar = () => {
+  const { currentPlayer } = useContext(PlayerContext);
+    
     return (
         <div className='ressourcebar'>
             <div className="ressources">
           <div className="raw-material">
             <div className="raw raw1">
               <img src="/ressource-icons/SILICA.png" alt="SILICA" />
-              <p className="ressource-counter">0000</p>
+              <p className="ressource-counter">{currentPlayer.silica}</p>
             </div>
             <div className="raw raw2">
               <img src="/ressource-icons/ORE.png" alt="ORE" />

@@ -38,6 +38,7 @@
     bottom: 200px;
     z-index: -2;
 }
+
 .login-title {
     font-size: 5rem;
     text-shadow: 0 0 15px var(--secondary-color), 0 0 10px var(--secondary-color);
