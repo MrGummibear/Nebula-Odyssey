@@ -103,7 +103,7 @@ class Planet {
      */
         ManageRessourceBalance() {
             console.log("test für einen ressourcentick");
-        
+            
             // Initialisieren des Gesamtsaldos
             let totalBalance = new RessourceContainer();
             let totalEnergy = 0;
@@ -154,7 +154,7 @@ class Planet {
         
             // Log der aktuellen Ressourcenstände
             console.log("Aktueller Ressourcenstand: ", this.planetRessources);
-        }
+        } 
 }
 class Building {
     level = 0;
@@ -191,114 +191,133 @@ class Building {
 }
 class MiningStation extends Building {
     constructor() {
+        super();
         this.balance.Set(0, 30, 0, -20, 0, 0, 30, 30)
         this.buildingCosts.Set(90, 0, 50, 60, 0, 0, 0, 30)
     }
 }
 class FuelFactory extends Building {
     constructor() {
+        super();
         this.balance.Set(0, -20, 0, 0, 30, 0, 0, 0)
         this.buildingCosts.Set(150, 0, 80, 20, 0, 0, 0, 20)
     }
 }
 class Raffinery extends Building {
     constructor() {
+        super();
         this.balance.Set(30, -20, 30, 0, 0, 0, -20, -20)
         this.buildingCosts.Set(150, 0, 60, 30, 0, 0, 0, 10)
     }
 }
 class PowerPlant extends Building {
     constructor() {
+        super();
         this.balance.Set(0, 0, 0, 30, -20, 0, 0, 0)
         this.buildingCosts.Set(110, 0, 60, 50, 0, 0, 0, 20)
     }
 }
 class SolarField extends Building {
     constructor() {
+        super();
         this.balance.Set(0, 0, 0, 30, 0, 0, 0, 0)
         this.buildingCosts.Set(80, 0, 80, 20, 0, 0, 0, 20)
     }
 }
 class AmmoFactory extends Building {
     constructor() {
+        super();
         this.balance.Set(-20, 0, -20, 0, 0, 30, 0, 0)
         this.buildingCosts.Set(100, 0, 50, 40, 0, 0, 0, 30)
     }
 }
 class Recycler extends Building {
     constructor() {
+        super();
         this.balance.Set(0, 0, 0, 0, 0, 0, 0, 0)
         this.buildingCosts.Set(0, 0, 0, 0, 0, 0, 0, 0)
     }
 }
 class SpyCenter extends Building {
     constructor() {
+        super();
         this.balance.Set(0, 0, 0, 0, 0, 0, 0, 0)
         this.buildingCosts.Set(0, 0, 0, 0, 0, 0, 0, 0)
     }
 }
 class FuelDepot extends Building {
     constructor() {
+        super();
         this.balance.Set(0, 0, 0, 0, 0, 0, 0, 0)
         this.buildingCosts.Set(0, 0, 0, 0, 0, 0, 0, 0)
     }
 }
 class ChemicalDepot extends Building {
     constructor() {
+        super();
         this.balance.Set(0, 0, 0, 0, 0, 0, 0, 0)
         this.buildingCosts.Set(0, 0, 0, 0, 0, 0, 0, 0)
     }
 }
 class OreDepot extends Building {
     constructor() {
+        super();
         this.balance.Set(0, 0, 0, 0, 0, 0, 0, 0)
         this.buildingCosts.Set(0, 0, 0, 0, 0, 0, 0, 0)
     }
 }
 class AmmoDepot extends Building {
     constructor() {
+        super();
         this.balance.Set(0, 0, 0, 0, 0, 0, 0, 0)
         this.buildingCosts.Set(0, 0, 0, 0, 0, 0, 0, 0)
     }
 }
 class EnergyDepot extends Building {
     constructor() {
+        super();
         this.balance.Set(0, 0, 0, 0, 0, 0, 0, 0)
         this.buildingCosts.Set(0, 0, 0, 0, 0, 0, 0, 0)
     }
 }
 class SteelDepot extends Building {
     constructor() {
+        super();
         this.balance.Set(0, 0, 0, 0, 0, 0, 0, 0)
         this.buildingCosts.Set(0, 0, 0, 0, 0, 0, 0, 0)
     }
 }
 class WasteDepot extends Building {
     constructor() {
+        super();
         this.balance.Set(0, 0, 0, 0, 0, 0, 0, 0)
         this.buildingCosts.Set(0, 0, 0, 0, 0, 0, 0, 0)
     }
 }
 class SmallShipyard extends Building {
     constructor() {
+        super();
         this.balance.Set(0, 0, 0, 0, 0, 0, 0, 0)
         this.buildingCosts.Set(0, 0, 0, 0, 0, 0, 0, 0)
     }
 }
 class MediumShipyard extends Building {
     constructor() {
+        super();
         this.balance.Set(0, 0, 0, 0, 0, 0, 0, 0)
         this.buildingCosts.Set(0, 0, 0, 0, 0, 0, 0, 0)
     }
 }
 class LargeShipyard extends Building {
     constructor() {
+        super();
         this.balance.Set(0, 0, 0, 0, 0, 0, 0, 0)
         this.buildingCosts.Set(0, 0, 0, 0, 0, 0, 0, 0)
     }
 }
 class ResearchCenter extends Building {
     constructor() {
+        super();
         this.balance.Set(0, 0, 0, 0, 0, 0, 0, 0)
         this.buildingCosts.Set(0, 0, 0, 0, 0, 0, 0, 0)
     }
@@ -384,7 +403,7 @@ class RessourceContainer {
 }
 const test = new RessourceContainer();
 
-export {
+export default {
     Player,
     Planet,
     Building,
