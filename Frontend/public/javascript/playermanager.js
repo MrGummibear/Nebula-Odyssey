@@ -383,3 +383,28 @@ class RessourceContainer {
     }
 }
 const test = new RessourceContainer();
+
+export {
+    Player,
+    Planet,
+    Building,
+    MiningStation,
+    FuelFactory,
+    Raffinery,
+    PowerPlant,
+    SolarField,
+    AmmoFactory,
+    Recycler,
+    SpyCenter,
+    FuelDepot,
+    ChemicalDepot,
+    OreDepot,
+    AmmoDepot,
+    EnergyDepot,
+    SteelDepot,
+    WasteDepot,
+    SmallShipyard,
+    MediumShipyard,
+    LargeShipyard,
+    ResearchCenter
+}
