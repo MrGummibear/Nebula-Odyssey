@@ -8,7 +8,9 @@ const Shipyard = () => {
   const [shipImage, setShipImage] = useState(
     `url(/werften/uebersicht-title.png)`
   );
-  const [shpiData, setShipData] = useState({});
+  const [shipData, setShipData] = useState({});
+  const [shipTitle, setShipTitle] = useState("");
+  const [shipDescription, setShipDescription] = useState("");
 
   const handleShipType = (type) => {
     setShips(werftTypen[type]);
@@ -27,6 +29,8 @@ const Shipyard = () => {
     if (item) {
       setShipData(item.properties);
       setShipImage(`url(${item.img})`);
+      setShipTitle(item.label);
+      setShipDescription(item.description);
     }
   };
 
@@ -61,62 +65,69 @@ const Shipyard = () => {
         style={{ backgroundImage: shipImage }}
       >
         <div className="ship-data">
+          <p className="ship-name">{shipTitle}</p>
           <ul>
+            <h4>Werte</h4>
             <li>
               <p className="data-left">Angriffsenergie:</p>{" "}
-              <p className="data-right">{shpiData.attackEnergy}</p>
-            </li>
-            <li>
-              <p className="data-left">Stahlkosten:</p>{" "}
-              <p className="data-right">{shpiData.steelcosts}</p>
-            </li>
-            <li>
-              <p className="data-left">Mikrochipkosten:</p>{" "}
-              <p className="data-right">{shpiData.mikroshipkosten}</p>
-            </li>
-            <li>
-              <p className="data-left">Chemiekosten:</p>{" "}
-              <p className="data-right">{shpiData.chemicalcosts}</p>
-            </li>
-            <li>
-              <p className="data-left">Energiekosten:</p>{" "}
-              <p className="data-right">{shpiData.energycosts}</p>
+              <p className="data-right">{shipData.attackEnergy}</p>
             </li>
             <li>
               <p className="data-left">Feuerpower:</p>{" "}
-              <p className="data-right">{shpiData.firepower}</p>
+              <p className="data-right">{shipData.firepower}</p>
             </li>
             <li>
               <p className="data-left">Hülle:</p>{" "}
-              <p className="data-right">{shpiData.hull}</p>
+              <p className="data-right">{shipData.hull}</p>
             </li>
             <li>
               <p className="data-left">Schild:</p>{" "}
-              <p className="data-right">{shpiData.shield}</p>
+              <p className="data-right">{shipData.shield}</p>
             </li>
             <li>
               <p className="data-left">Geschwindigkeit:</p>{" "}
-              <p className="data-right">{shpiData.speed}</p>
+              <p className="data-right">{shipData.speed}</p>
             </li>
             <li>
               <p className="data-left">Kraftstoffverbrauch:</p>{" "}
-              <p className="data-right">{shpiData.fuelconsume}</p>
+              <p className="data-right">{shipData.fuelconsume}</p>
             </li>
             <li>
               <p className="data-left">Munitionsverbrauch:</p>{" "}
-              <p className="data-right">{shpiData.ammoconsume}</p>
+              <p className="data-right">{shipData.ammoconsume}</p>
             </li>
             <li>
               <p className="data-left">Hangar:</p>{" "}
-              <p className="data-right">{shpiData.hangaring}</p>
+              <p className="data-right">{shipData.hangaring}</p>
             </li>
             <li>
               <p className="data-left">Fracht:</p>{" "}
-              <p className="data-right">{shpiData.cargo}</p>
+              <p className="data-right">{shipData.cargo}</p>
             </li>
           </ul>
+          <h6>{shipDescription}</h6>
         </div>
         <div className="build-menu">
+          <ul>
+            {" "}
+            <li>
+              <p className="data-left">Stahlkosten:</p>{" "}
+              <p className="data-right">{shipData.steelcosts}</p>
+            </li>
+            <li>
+              <p className="data-left">Mikrochipkosten:</p>{" "}
+              <p className="data-right">{shipData.mikroshipkosten}</p>
+            </li>
+            <li>
+              <p className="data-left">Chemiekosten:</p>{" "}
+              <p className="data-right">{shipData.chemicalcosts}</p>
+            </li>
+            <li>
+              <p className="data-left">Energiekosten:</p>{" "}
+              <p className="data-right">{shipData.energycosts}</p>
+            </li>
+          </ul>
+
           <div className="increment-decrement">
             <input
               type="text"

@@ -30,12 +30,13 @@ h4 {
 
 .ship-data {
   width: 225px;
-  height: 99%;
+  height: 98%;
   position: relative;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.8);
   color: #ffffff;
   text-align: start;
-  padding: 5px 10px 0 10px;
+  padding: 10px 10px 0 10px;
+  align-self: end;
 }
 
 .ship-data li {
@@ -55,18 +56,48 @@ h4 {
   color: #ffdd57; /* Helle Akzentfarbe für die Bezeichner */
 }
 
+.ship-name {
+  font-size: 2rem;
+  font-weight: bold;
+  text-decoration: underline;
+  margin-bottom: 5px;
+}
+
 .build-menu {
   width: 180px;
-  height: 35px;
+  height: 195px;
   position: relative;
-  top: 460px;
-  background-color: rgba(0, 0, 0, 0.6);
+  top: 296px;
+  background-color: rgba(0, 0, 0, 0.8);
   color: #ffffff;
   text-align: start;
   padding: 5px 10px 0 10px;
   display: flex;
+  flex-direction: column;
   gap: 5px;
+  text-align: start;
+  padding: 5px 10px 0 10px;
+  border: 2px solid var(--secondary-color);
+  border-radius: 10px;
 }
+
+.build-menu li {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  font-size: 14px;
+}
+
+.build-menu li:last-child {
+  border-bottom: none;
+}
+
+.build-menu li span {
+  font-weight: bold;
+  color: #ffdd57; /* Helle Akzentfarbe für die Bezeichner */
+}
+
 .build-counter {
   width: 30px;
   height: 15px;
