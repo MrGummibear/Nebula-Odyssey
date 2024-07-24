@@ -1,16 +1,8 @@
 
 
 class Player {
-    constructor(steel, chemicals, electronics, energy, fuel, ammo, silicium, ore) {
-        
+    constructor() {
         this.Planets.push(new Planet())
-        this.Planets.push(new Planet())
-        this.Planets.push(new Planet())
-        this.Planets.push(new Planet())
-        this.Planets.push(new Planet())
-        this.Planets.forEach(element => {
-            element.planetRessources.Set(20000,20000,20000,20000,20000,20000,20000,20000);
-        });
     }
     technologie = {
         mining: 0,
@@ -109,6 +101,18 @@ class Planet {
         this.silicium 
         this.ore 
      */
+        /* {
+    username: "Marius",
+    password: "1234",
+    silica: 20000,
+    ore: 20000,
+    chem: 20000,
+    fuel: 20000,
+    ammo: 20000,
+    steel: 20000,
+    electronics: 20000,
+    energy: 20000,
+  },*/
         ManageRessourceBalance() {
             let totalBalance = new RessourceContainer();
             totalBalance = RessourceContainer.Addition(totalBalance, this.basicIncome);

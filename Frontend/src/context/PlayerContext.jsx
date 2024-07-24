@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import { createContext, useState, useEffect } from 'react';
 import mockPlayerData from '../assets/data/mockData';
-
+import playermanager from '../../public/javascript/playermanager';
 export const PlayerContext = createContext();
 
 const PlayerProvider = ({ children }) => {
