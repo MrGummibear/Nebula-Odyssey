@@ -7,13 +7,13 @@ const Playermanager = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       const additionalResources = {
-        silica: 10,
-        ore: 10,
-        chem: 10,
-        fuel: 10,
-        ammo: 10,
-        steel: 10,
-        electronics: 10,
+        silica: 15,
+        ore: 18,
+        chem: 7,
+        fuel: 5,
+        ammo: 11,
+        steel: 35,
+        electronics: 17,
         energy: 10,
       };
 
