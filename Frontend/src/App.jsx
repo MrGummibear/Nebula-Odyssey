@@ -1,6 +1,6 @@
 
 import './css/App.css'
-import AppProvider from './context/AppProvider'
+import PlayerProvider from './context/PlayerContext'; 
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import SharedLayout from './pages/SharedLayout'
 import Overview from './pages/Overview/Overview'
@@ -11,17 +11,19 @@ import Shipyard from './pages/Shipyard/Shipyard'
 import Defense from './pages/Defense/Defense'
 import Armada from './pages/Armada/Armada'
 import NotFound from './pages/NotFound/NotFound'
+import Login from './pages/Login/Login'
+import StarField from './components/Starfield/StarField';
 
 function App() {
-  
 
   return (
     <>
-      <AppProvider>
+      <PlayerProvider>
         <BrowserRouter>
+        <StarField />
           <Routes>
+            <Route index element={<Login />} /> 
             <Route path='/' element={<SharedLayout/>}>
-              <Route index element={<Overview />}></Route>
               {/* Weitere Routen hier zwischen */}
               <Route path='overview' element={<Overview />} />
               <Route path='spacemap' element={<Spacemap />} />
@@ -35,7 +37,7 @@ function App() {
             </Route>
           </Routes>
         </BrowserRouter>
-      </AppProvider>
+      </PlayerProvider>
     </>
   )
 }

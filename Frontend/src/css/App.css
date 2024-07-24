@@ -1,6 +1,8 @@
+@import './fonts.css';
 * {
   margin: 0px;
   padding: 0px;
+  font-family: Inconsolata-regular, sans-serif;
 }
 
 :root{
@@ -19,6 +21,7 @@
     --legend1-color: #62d117;
     --legend2-color: #ffdb39;
     --legend3-color: #fd0d0d;
+    --legend4-color: #081282;
   }
 #root{
   height: 100vh;
@@ -37,7 +40,7 @@ body {
   transform: translate(-50%, -50%);
   z-index: 2;
 }
-
+/**/
 .content-box {
   display: flex;
   flex-direction: column;

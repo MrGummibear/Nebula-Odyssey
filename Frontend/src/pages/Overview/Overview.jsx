@@ -1,12 +1,16 @@
 import './Overview.css'
+import { useContext } from "react";
+import { PlayerContext } from '../../context/PlayerContext';
 
 const Overview = () => {
+    const { currentPlayer } = useContext(PlayerContext);
+
     return (
        <div className="content-box">
             <div className="uebersicht-title"><h1>Übersicht</h1></div>
             <div className="topcontent">
               <div className="uebersicht-topcontent">
-                <h1>Willkommen <em>Playername</em>!</h1>
+                <h1 className='uebersicht-user'>Willkommen, <em>{currentPlayer.username}</em>!</h1>
               </div>
             </div>
             <div className="uebersicht-midcontent">

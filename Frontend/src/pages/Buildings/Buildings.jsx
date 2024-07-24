@@ -62,7 +62,7 @@ const Buildings = () => {
                     </div>
                 ))}
             </div>
-        </div>
+        
     );
 }
 

@@ -1,5 +1,7 @@
 import "./Navbar.css"
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { NavLink } from "react-router-dom";
+import { PlayerContext } from '../../context/PlayerContext';
 
 const Clock = () => {
     let time = new Date().toLocaleTimeString();
@@ -12,24 +14,28 @@ const Clock = () => {
     setInterval(updateTime, 1000);
 
     return (
-        <div>
-            <h1>{currentTime}</h1>
-        </div>
+        <>
+            {currentTime}
+        </>
     )
 }
 
 const Navbar = () => {
+    const { currentPlayer } = useContext(PlayerContext);
+
     return (
         <header>
             <div className="head-bar">
-                <a href="../src/index.html">HOME</a>
-                <a href="#">NOTIZEN</a>
-                <a href="#">HIGHSCORE</a>
-                <a href="#">EINSTELLUNGEN</a>
-                <a href="#">SUPPORT</a>
-                <a href="#">LOGOUT</a>
+                <NavLink to='/overview' className={({ isActive }) => isActive ? 'active' : ''}>HOME</NavLink>
+                <NavLink to='#' className={({ isActive }) => isActive ? 'active' : ''}>NOTIZEN</NavLink>
+                <NavLink to='#' className={({ isActive }) => isActive ? 'active' : ''}>HIGHSCORE</NavLink>
+                <NavLink to='#' className={({ isActive }) => isActive ? 'active' : ''}>EINSTELLUNGEN</NavLink>
+                <NavLink to='#' className={({ isActive }) => isActive ? 'active' : ''}>SUPPORT</NavLink>
+                <NavLink to='/' className={({ isActive }) => isActive ? 'active' : ''}>{ currentPlayer && currentPlayer.username === 'Guest' ? 'LOGIN' : 'LOGOUT'}</NavLink>
             </div>
-            <div className="player"><a href="#">PLAYER</a></div>
+                <div className="player">
+                    <a href="#">{currentPlayer.username}</a>
+                </div>
             <div className="clock" id="clock">
                 <p><Clock/></p>
             </div>
