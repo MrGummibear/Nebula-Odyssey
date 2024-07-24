@@ -9,7 +9,8 @@ const Login = () => {
   const navigate = useNavigate();
   const { addPlayerData } = useContext(PlayerContext);
 
-  const handleLogin = () => {
+  const handleLogin = (e) => {
+    e.preventDefault(); // Verhindert das Standard-Formular-Submit-Verhalten
     const playerData = { username, password };
     addPlayerData(playerData); // Daten zum globalen Zustand hinzufügen
     navigate("/overview");
@@ -36,6 +37,11 @@ const Login = () => {
                     placeholder="Password" 
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
+                    onKeyDown={(e) => {
+                        if (e.key === 'Enter') {
+                          handleLogin(e);
+                        }
+                      }}
                 />
                 <button onClick={handleLogin}>Login</button>
             </div>
