@@ -12,7 +12,7 @@ const Login = () => {
   const handleLogin = (e) => {
     e.preventDefault(); // Verhindert das Standard-Formular-Submit-Verhalten
     playerData.map((currentUser) => {
-        if (currentUser.username === username){
+        if (currentUser.username === username && currentUser.password === password){
             setCurrentPlayer({...currentUser})
         }
     }) // Daten zum globalen Zustand hinzufügen

@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./Defense.css";
 import werftTypen from "../../assets/data/werften";
 
-const defaultDescription = (
+const DefaultDescription = () => (
   <div>
     <p>Willkommen bei deinen Verteidigungsanlagen!</p>
     <p>
@@ -21,7 +21,7 @@ const defaultDescription = (
 const defaultImage = `/werften/uebersicht-defense.png`;
 
 const Defense = () => {
-  const [description, setDescription] = useState(defaultDescription);
+  const [description, setDescription] = useState(null);
   const [image, setImage] = useState(defaultImage);
   const [active, setActive] = useState("");
 
@@ -74,7 +74,7 @@ const Defense = () => {
           <button
             className={`btn ${active === "" ? "active" : ""}`}
             onClick={() => {
-              setDescription(defaultDescription);
+              setDescription(null);
               setImage(defaultImage);
               setActive("");
             }}
@@ -113,7 +113,8 @@ const Defense = () => {
           </button>
         </div>
         <div className="defense-description">
-          <p>{description}</p>
+          {description && <p>{description}</p>}
+          {!description && <DefaultDescription />}
         </div>
       </div>
     </div>
