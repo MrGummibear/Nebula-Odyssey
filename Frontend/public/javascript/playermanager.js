@@ -33,21 +33,24 @@ class Planet {
     }
     planetRessources = new RessourceContainer();
 
-    miningFacility = new MiningStation();
-    fuelFactory = new FuelFactory();
-    raffinery = new Raffinery();
-    powerPlant = new PowerPlant();
-    solarField = new SolarField();
-    ammoFactory = new AmmoFactory();
-    recycler = new Recycler();
-    spyCenter = new SpyCenter();
-    smallShipyard = new SmallShipyard();
-    mediumShipyard = new MediumShipyard();
-    bigShipyard = new LargeShipyard();
-    researchCenter = new ResearchCenter();
-    shieldGenerator = 0;
+    buildings = [
+        this.miningFacility = new MiningStation(),
+        this.fuelFactory = new FuelFactory(),
+        this.raffinery = new Raffinery(),
+        this.powerPlant = new PowerPlant(),
+        this.solarField = new SolarField(),
+        this.ammoFactory = new AmmoFactory(),
+        this.recycler = new Recycler(),
+        this.spyCenter = new SpyCenter(),
+        this.smallShipyard = new SmallShipyard(),
+        this.mediumShipyard = new MediumShipyard(),
+        this.bigShipyard = new LargeShipyard(),
+        this.researchCenter = new ResearchCenter(),
+        this.shieldGenerator = 0,
+    ]
 
-    // planetInstance.UpgradeBuilding(planetInstance.miningFacility)
+
+    // planetInstance.UpgradeBuilding(planetInstance.buildings.miningfacility)
     UpgradeBuilding(building) {
         if (RessourceContainer.Substrate(this.planetRessources, building.buildingCosts) !== false) {
             this.planetRessources = RessourceContainer.Substrate(this.planetRessources, building.buildingCosts);
@@ -98,9 +101,60 @@ class Planet {
         this.silicium 
         this.ore 
      */
-    ManageRessourceBalance() {
-        console.log("test für einen ressourcentick")
-    }
+        ManageRessourceBalance() {
+            console.log("test für einen ressourcentick");
+        
+            // Initialisieren des Gesamtsaldos
+            let totalBalance = new RessourceContainer();
+            let totalEnergy = 0;
+        
+            // Berechnen des Gesamtsaldos und der Gesamtenergie
+            this.buildings.forEach(element => {
+                totalBalance = RessourceContainer.Addition(totalBalance, element.balance);
+                totalEnergy += element.balance.energy;
+            });
+        
+            // Ressourcenverbrauch überprüfen und anpassen, falls nicht ausreichend
+            if (totalBalance.fuel < 0 && this.planetRessources.fuel + totalBalance.fuel < 0) {
+                let deficit = totalBalance.fuel + this.planetRessources.fuel;
+                totalBalance.fuel = -this.planetRessources.fuel;
+        
+                // Anpassung des Defizits auf andere Ressourcen, falls notwendig
+                let keys = Object.keys(totalBalance);
+                let adjustFactor = -deficit / (keys.length - 1); // -1, um 'fuel' auszuschließen
+                keys.forEach(key => {
+                    if (key !== 'fuel') {
+                        totalBalance[key] += adjustFactor;
+                        if (totalBalance[key] < 0) {
+                            totalBalance[key] = 0;
+                        }
+                    }
+                });
+            }
+        
+            if (totalBalance.energy < 0 && this.planetRessources.energy + totalEnergy < 0) {
+                let deficit = totalBalance.energy + this.planetRessources.energy;
+                totalBalance.energy = -this.planetRessources.energy;
+        
+                // Anpassung des Defizits auf andere Ressourcen, falls notwendig
+                let keys = Object.keys(totalBalance);
+                let adjustFactor = -deficit / (keys.length - 1); // -1, um 'energy' auszuschließen
+                keys.forEach(key => {
+                    if (key !== 'energy') {
+                        totalBalance[key] += adjustFactor;
+                        if (totalBalance[key] < 0) {
+                            totalBalance[key] = 0;
+                        }
+                    }
+                });
+            }
+        
+            // Ressourcenproduktion hinzufügen
+            this.planetRessources = RessourceContainer.Addition(this.planetRessources, totalBalance);
+        
+            // Log der aktuellen Ressourcenstände
+            console.log("Aktueller Ressourcenstand: ", this.planetRessources);
+        }
 }
 class Building {
     level = 0;
@@ -137,38 +191,38 @@ class Building {
 }
 class MiningStation extends Building {
     constructor() {
-        this.balance.Set(0, 0, 0, 0, 0, 0, 0, 0)
-        this.buildingCosts.Set(0, 0, 0, 0, 0, 0, 0, 0)
+        this.balance.Set(0, 30, 0, -20, 0, 0, 30, 30)
+        this.buildingCosts.Set(90, 0, 50, 60, 0, 0, 0, 30)
     }
 }
 class FuelFactory extends Building {
     constructor() {
-        this.balance.Set(0, 0, 0, 0, 0, 0, 0, 0)
-        this.buildingCosts.Set(0, 0, 0, 0, 0, 0, 0, 0)
+        this.balance.Set(0, -20, 0, 0, 30, 0, 0, 0)
+        this.buildingCosts.Set(150, 0, 80, 20, 0, 0, 0, 20)
     }
 }
 class Raffinery extends Building {
     constructor() {
-        this.balance.Set(0, 0, 0, 0, 0, 0, 0, 0)
-        this.buildingCosts.Set(0, 0, 0, 0, 0, 0, 0, 0)
+        this.balance.Set(30, -20, 30, 0, 0, 0, -20, -20)
+        this.buildingCosts.Set(150, 0, 60, 30, 0, 0, 0, 10)
     }
 }
 class PowerPlant extends Building {
     constructor() {
-        this.balance.Set(0, 0, 0, 0, 0, 0, 0, 0)
-        this.buildingCosts.Set(0, 0, 0, 0, 0, 0, 0, 0)
+        this.balance.Set(0, 0, 0, 30, -20, 0, 0, 0)
+        this.buildingCosts.Set(110, 0, 60, 50, 0, 0, 0, 20)
     }
 }
 class SolarField extends Building {
     constructor() {
-        this.balance.Set(0, 0, 0, 0, 0, 0, 0, 0)
-        this.buildingCosts.Set(0, 0, 0, 0, 0, 0, 0, 0)
+        this.balance.Set(0, 0, 0, 30, 0, 0, 0, 0)
+        this.buildingCosts.Set(80, 0, 80, 20, 0, 0, 0, 20)
     }
 }
 class AmmoFactory extends Building {
     constructor() {
-        this.balance.Set(0, 0, 0, 0, 0, 0, 0, 0)
-        this.buildingCosts.Set(0, 0, 0, 0, 0, 0, 0, 0)
+        this.balance.Set(-20, 0, -20, 0, 0, 30, 0, 0)
+        this.buildingCosts.Set(100, 0, 50, 40, 0, 0, 0, 30)
     }
 }
 class Recycler extends Building {
