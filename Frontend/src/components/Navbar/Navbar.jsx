@@ -37,7 +37,7 @@ const Navbar = () => {
                     <a href="#">{currentPlayer.username}</a>
                 </div>
             <div className="clock" id="clock">
-                <h1><Clock/></h1>
+                <p><Clock/></p>
             </div>
         </header>
     );
