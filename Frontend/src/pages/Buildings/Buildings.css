@@ -8,7 +8,7 @@
 
 .gebaeude-heading {
   margin: 10px 0 10px 10px;
-  text-decoration: underline #72203b;
+  text-decoration: underline var(--secondary-color);
   text-align: left;
   width: 100%;
 }
@@ -30,7 +30,7 @@
   justify-content: space-between; /* Platz zwischen Text und Button */
   align-items: flex-end; /* Rechtsbündig ausrichten */
   padding: 10px;
-  border: #72203b 1px solid;
+  border: var(--secondary-color) 1px solid;
   background-size: cover;
   background-position: center;
   box-sizing: border-box;

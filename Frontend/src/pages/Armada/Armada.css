@@ -13,6 +13,7 @@ section{
     justify-content: center;
     align-items: center;
     margin-top: 20px;
+    padding-bottom: 15px;
   }
 .activity{
     display: flex;

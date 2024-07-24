@@ -11,7 +11,7 @@
   background-image: url(/background-img/background-a.jpg);
     /* Allgemeine Farben */
     --primary-color: #0e1b24;
-    --secondary-color: #72203b;
+    --secondary-color: #c91e1e;
     --tertiary-color: #8d867b6b;
     --highlight-color: #9cf741;
     --accent-color: #08151d;
@@ -22,6 +22,7 @@
     --legend2-color: #ffdb39;
     --legend3-color: #fd0d0d;
     --legend4-color: #081282;
+    --legend5-color: #0bccd2;
   }
 #root{
   height: 100vh;

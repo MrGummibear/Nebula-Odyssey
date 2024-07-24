@@ -1,6 +1,6 @@
 
 .uebersicht {
-    --background-color: linear-gradient(to bottom right, #0e1b24, #72203b);
+    --background-color: linear-gradient(to bottom right, #0e1b24, var(--secondary-color));
     color: white;
   }  
 

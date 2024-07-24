@@ -29,7 +29,7 @@ ul {
 
 .uebersicht {
   --background-color: var(--tertiary-color);
-  --border-color: linear-gradient(to bottom right, #0e1b24, #72203b);
+  --border-color: linear-gradient(to bottom right, #0e1b24, var(--secondary-color));
   color: #0e1b24;
 }
 
@@ -104,7 +104,7 @@ ul {
 
 .btn {
   --background-color: var(--tertiary-color);
-  --border-color: linear-gradient(to bottom right, #0e1b24, #72203b);
+  --border-color: linear-gradient(to bottom right, #0e1b24, var(--secondary-color));
   --border-width: 0.2em;
   --edge-size: 0.5em;
   color: #0e1b24;
@@ -181,6 +181,6 @@ ul {
 }
 
 .active {
-  --background-color: linear-gradient(to bottom right, #0e1b24, #72203b);
+  --background-color: linear-gradient(to bottom right, #091e2c, var(--secondary-color));
   color: white;
 }
