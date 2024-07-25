@@ -168,19 +168,27 @@ const Shipyard = () => {
             {" "}
             <li>
               <p className="data-left">Stahlkosten:</p>{" "}
-              <p className="data-right">{shipData.steelcosts}</p>
+              <p className="data-right">
+                {(shipData?.steelcosts ?? 0) * (count ?? 0)}
+              </p>
             </li>
             <li>
               <p className="data-left">Mikrochipkosten:</p>{" "}
-              <p className="data-right">{shipData.mikroshipkosten}</p>
+              <p className="data-right">
+                {(shipData?.mikroshipkosten ?? 0) * (count ?? 0)}
+              </p>
             </li>
             <li>
               <p className="data-left">Chemiekosten:</p>{" "}
-              <p className="data-right">{shipData.chemicalcosts}</p>
+              <p className="data-right">
+                {(shipData?.chemicalcosts ?? 0) * (count ?? 0)}
+              </p>
             </li>
             <li>
               <p className="data-left">Energiekosten:</p>{" "}
-              <p className="data-right">{shipData.energycosts}</p>
+              <p className="data-right">
+                {(shipData?.energycosts ?? 0) * (count ?? 0)}
+              </p>
             </li>
           </ul>
           <div className="increment-decrement">
