@@ -101,6 +101,15 @@ This section should list any major frameworks/libraries used to bootstrap your p
 * [![HTML5][HTML5-logo]][HTML5-url]
 * [![JavaScript][JavaScript-logo]][JavaScript-url]
 
+[CSS3-logo]: https://img.shields.io/badge/CSS3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white
+[CSS3-url]: https://developer.mozilla.org/en-US/docs/Web/CSS
+
+[HTML5-logo]: https://img.shields.io/badge/HTML5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white
+[HTML5-url]: https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5
+
+[JavaScript-logo]: https://img.shields.io/badge/JavaScript-%23F7DF1E.svg?style=for-the-badge&logo=javascript&logoColor=black
+[JavaScript-url]: https://developer.mozilla.org/en-US/docs/Web/JavaScript
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
