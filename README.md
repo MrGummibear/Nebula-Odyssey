@@ -97,6 +97,10 @@ Explore more on <a href="https://nebula-odyssey.vercel.app/">Nebula Odyssey</a>
 This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
 
 * [![React][React.js]][React-url]
+* [![CSS3][CSS3-logo]][CSS3-url]
+* [![HTML5][HTML5-logo]][HTML5-url]
+* [![JavaScript][JavaScript-logo]][JavaScript-url]
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
