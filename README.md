@@ -74,7 +74,6 @@
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>
 
@@ -85,16 +84,10 @@
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
-There are many great README templates available on GitHub; however, I didn't find one that really suited my needs so I created this enhanced one. I want to create a README template so amazing that it'll be the last one you ever need -- I think this is it.
 
-Here's why:
-* Your time should be focused on creating something amazing. A project that solves a problem and helps others
-* You shouldn't be doing the same tasks over and over like creating a README from scratch
-* You should implement DRY principles to the rest of your life :smile:
+Nebula Odyssey is an interactive space exploration game where players can visit planets, gather resources, and interact with other players in a futuristic cosmic environment. The game emphasizes a detailed and visually rich experience, allowing players to explore various celestial bodies and engage in activities such as resource collection and multiplayer interactions. The platform offers a blend of adventure and strategy as players navigate through space, uncovering new areas, and collaborating or competing with others.
 
-Of course, no one template will serve all projects since your needs may be different. So I'll be adding more in the near future. You may also suggest changes by forking this repo and creating a pull request or opening an issue. Thanks to all the people have contributed to expanding this template!
-
-Use the `BLANK_README.md` to get started.
+Explore more on <a href="https://nebula-odyssey.vercel.app/">Nebula Odyssey</a>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -172,13 +165,20 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 <!-- ROADMAP -->
 ## Roadmap
 
-- [x] Add Changelog
-- [x] Add back to top links
-- [ ] Add Additional Templates w/ Examples
-- [ ] Add "components" document to easily copy & paste sections of the readme
-- [ ] Multi-language Support
-    - [ ] Chinese
-    - [ ] Spanish
+- [x] Build the project in React
+  - [x] Main-Components
+  - [ ] Notes
+  - [ ] Settings
+  - [ ] Support
+- [ ] Add Backend
+     - [ ] Implement serverstructure
+     - [ ] Add registration and login
+     - [ ] Add playerdata
+     - [ ] Add gamedata
+     - [ ] Add chat
+     - [ ] Add datatransfer
+     - [ ] Update battlesystem
+- [ ] Deployment
 
 See the [open issues](https://github.com/othneildrew/Best-README-Template/issues) for a full list of proposed features (and known issues).
 
