@@ -222,10 +222,10 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Freeman010 - https://github.com/Freeman010
-Smush02 - https://github.com/Smush02
-MrGummibear - https://github.com/MrGummibear
-Mynchro - https://github.com/Mynchro
+- Freeman010  (https://github.com/Freeman010)
+- Smush02  (https://github.com/Smush02)
+- MrGummibear  (https://github.com/MrGummibear)
+- Mynchro  (https://github.com/Mynchro)
 
 Project Link: https://github.com/MrGummibear/Nebula-Odyssey.git
 
