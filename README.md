@@ -18,35 +18,19 @@
 *** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
-
-
 
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+  <a href="[https://github.com/othneildrew/Best-README-Template](https://github.com/MrGummibear/Nebula-Odyssey/blob/main/Frontend/public/icons/logo_placeholder.png)">
+    <img src="https://github.com/MrGummibear/Nebula-Odyssey/blob/main/Frontend/public/icons/logo_placeholder.png" alt="Logo" width="250" height="250">
   </a>
 
-  <h3 align="center">Best-README-Template</h3>
+  <h3 align="center">Nebula Odyssey</h3>
 
   <p align="center">
-    An awesome README template to jumpstart your projects!
+    Learn everything about Nebula Odyssey!
     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template"><strong>Explore the docs »</strong></a>
-    <br />
-    <br />
-    <a href="https://github.com/othneildrew/Best-README-Template">View Demo</a>
-    ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
-    ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
   </p>
 </div>
 
@@ -63,13 +47,14 @@
       </ul>
     </li>
     <li>
-      <a href="#getting-started">Getting Started</a>
+      <a href="#registration-and-setup">Registration and Setup</a>
       <ul>
         <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#registration">Registration</a></li>
         <li><a href="#installation">Installation</a></li>
+        <li><a href="#first-steps">First Steps</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
@@ -103,20 +88,21 @@ Explore more on <a href="https://nebula-odyssey.vercel.app/">Nebula Odyssey</a>
 
 
 <!-- REGISTRATION AND SETUP -->
-Registration and Setup
+### Registration and Setup
 To start your journey in Nebula Odyssey, follow these steps:
 
-Prerequisites
+#### Prerequisites
 Ensure you have a modern web browser like Chrome or Firefox.
 
-Registration
+#### Registration
 Visit Nebula Odyssey and click on "Sign Up".
 Create an account using your email or social login.
 Verify your email to activate the account.
-Installation
+
+#### Installation
 No installation is required; simply log in and begin exploring the galaxy!
 
-First Steps
+#### First Steps
 Customize your avatar.
 Visit your first planet and gather resources.
 Join the community in multiplayer mode.
