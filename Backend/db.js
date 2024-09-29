@@ -3,8 +3,8 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
-const mwkey = encodeURIComponent(process.env.MWKEY);
-const uri = `mongodb+srv://mariusweber:${mwkey}@nebulaodysseycluster.4gaxp.mongodb.net/?retryWrites=true&w=majority&appName=NebulaOdysseyCluster`;
+const adminKey = encodeURIComponent(process.env.ADMIN);
+const uri = `mongodb+srv://Admin:${adminKey}@nebulaodysseycluster.4gaxp.mongodb.net/?retryWrites=true&w=majority&appName=NebulaOdysseyCluster`;
 
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
 const client = new MongoClient(uri, {
